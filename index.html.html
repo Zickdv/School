@@ -5,64 +5,123 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>مدرسة شهيد أحمد شلبي أبو الخير - حاسبة الدرجات</title>
 <link rel="icon" href="https://i.postimg.cc/tg9Z6BkR/96318590184.webp">
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Cairo:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-:root{--primary:#1a5276;--primary-light:#2980b9;--secondary:#c0392b;--gold:#f39c12;--dark:#1a1a2e;--light:#f8f9fa;--gray:#6c757d;--bg:#fff;--text:#1a1a2e;--card-bg:#f8f9fa;--gradient:linear-gradient(135deg,#1a5276,#2980b9);--gradient-red:linear-gradient(135deg,#c0392b,#e74c3c);--gradient-gold:linear-gradient(135deg,#f39c12,#e67e22);--shadow:0 4px 20px rgba(0,0,0,.06);--shadow-lg:0 10px 40px rgba(0,0,0,.1);--shadow-xl:0 20px 60px rgba(0,0,0,.12);--tr:all .3s ease;--navbar-bg:rgba(255,255,255,.95);--border-color:#dee2e6;--glass-bg:rgba(255,255,255,.7);--glass-border:rgba(255,255,255,.3);--success:#2ecc71;--info:#3498db}
-[data-theme="dark-gold"]{--primary:#d4a017;--primary-light:#f1c40f;--secondary:#e74c3c;--gold:#f39c12;--dark:#0a0a0f;--light:#14141f;--gray:#9ca3af;--bg:#0d0d15;--text:#e8e8e8;--card-bg:#1a1a28;--gradient:linear-gradient(135deg,#d4a017,#f1c40f);--gradient-red:linear-gradient(135deg,#c0392b,#e74c3c);--gradient-gold:linear-gradient(135deg,#d4a017,#f39c12);--shadow:0 4px 20px rgba(0,0,0,.3);--shadow-lg:0 10px 40px rgba(0,0,0,.4);--shadow-xl:0 20px 60px rgba(0,0,0,.5);--navbar-bg:rgba(13,13,21,.95);--border-color:#2a2a3a;--glass-bg:rgba(26,26,40,.7);--glass-border:rgba(255,255,255,.08);--success:#27ae60;--info:#2980b9}
+:root {
+  --primary: #1a3f6f;
+  --primary-light: #2d6abf;
+  --secondary: #c0392b;
+  --gold: #c9992c;
+  --gold-light: #e8b84b;
+  --dark: #0f1c2e;
+  --light: #f7f9fc;
+  --gray: #6b7a8d;
+  --bg: #eef2f7;
+  --text: #1a2636;
+  --card-bg: #ffffff;
+  --border-color: #dde3ec;
+  --navbar-bg: rgba(255,255,255,0.97);
+  --glass-bg: rgba(255,255,255,0.7);
+  --glass-border: rgba(26,63,111,0.1);
+  --tr: all 0.3s ease;
+  --gradient: linear-gradient(135deg, #1a3f6f, #2d6abf);
+  --gradient-gold: linear-gradient(135deg, #b8821e, #c9992c);
+  --gradient-red: linear-gradient(135deg, #a93226, #c0392b);
+  --shadow-sm: 0 1px 4px rgba(26,63,111,0.08);
+  --shadow-md: 0 4px 12px rgba(26,63,111,0.1);
+  --shadow-lg: 0 10px 30px rgba(26,63,111,0.13);
+  --shadow-xl: 0 20px 50px rgba(26,63,111,0.15);
+  --radius: 14px;
+}
+/* ====== DARK MODE - ألوان داكنة أنيقة ====== */
+[data-theme="dark-gold"]{
+  --primary:#5b9bd5;
+  --primary-light:#7ab3e0;
+  --secondary:#e05c6a;
+  --gold:#d4a843;
+  --dark:#0a0f1a;
+  --light:#1a2235;
+  --gray:#8a96a8;
+  --bg:#0d1117;
+  --text:#e2e8f0;
+  --card-bg:#161d2b;
+  --border-color:#1e2d42;
+  --navbar-bg:rgba(13,17,23,0.97);
+  --glass-bg:rgba(22,29,43,0.85);
+  --glass-border:rgba(91,155,213,0.15);
+  --gradient:linear-gradient(135deg,#1e3a5f,#2d5a8e);
+  --gradient-gold:linear-gradient(135deg,#a87820,#d4a843);
+  --gradient-red:linear-gradient(135deg,#8b1e2a,#c0392b);
+  --shadow-sm:0 2px 8px rgba(0,0,0,0.4);
+  --shadow-md:0 4px 16px rgba(0,0,0,0.45);
+  --shadow-lg:0 10px 35px rgba(0,0,0,0.5);
+  --shadow-xl:0 20px 60px rgba(0,0,0,0.6);
+  --tr:all 0.3s ease;
+  --radius:14px;
+}
+[data-theme="dark-gold"] *{border-color:var(--border-color)}
 [data-theme="dark-gold"] body{background:var(--bg);color:var(--text)}
-[data-theme="dark-gold"] .navbar{background:var(--navbar-bg)}
+[data-theme="dark-gold"] .navbar{background:var(--navbar-bg);border-bottom:1px solid var(--border-color)}
 [data-theme="dark-gold"] .nav-links a{color:var(--text)}
-[data-theme="dark-gold"] .nav-links a:hover,[data-theme="dark-gold"] .nav-links a.active{color:var(--gold);background:rgba(212,160,23,.1)}
-[data-theme="dark-gold"] .logo-text h1{color:var(--gold)}
-[data-theme="dark-gold"] .logo-text span{color:var(--secondary)}
+[data-theme="dark-gold"] .nav-links a:hover,[data-theme="dark-gold"] .nav-links a.active{color:var(--primary-light);background:rgba(91,155,213,.1)}
+[data-theme="dark-gold"] .logo-text h1{color:var(--primary-light)}
+[data-theme="dark-gold"] .logo-text span{color:var(--gold)}
 [data-theme="dark-gold"] .logo-text small{color:var(--gray)}
-[data-theme="dark-gold"] .top-bar{background:linear-gradient(135deg,#08080c,#0d0d15);border-bottom-color:var(--gold)}
+[data-theme="dark-gold"] .top-bar{background:linear-gradient(135deg,#080c14,#0d1117);border-bottom-color:var(--border-color)}
+[data-theme="dark-gold"] .flag-stripe{opacity:.4}
+[data-theme="dark-gold"] .news-ticker{background:linear-gradient(135deg,#1a1a2e,#16213e)}
+[data-theme="dark-gold"] .quick-links{background:var(--card-bg);border-bottom:1px solid var(--border-color)}
+[data-theme="dark-gold"] .quick-link{background:var(--bg);color:var(--text);border:1px solid var(--border-color)}
+[data-theme="dark-gold"] .quick-link:hover{border-color:var(--primary);color:var(--primary-light)}
+[data-theme="dark-gold"] .hero{background:linear-gradient(135deg,rgba(13,17,23,.97),rgba(30,58,95,.9)),url('https://i.postimg.cc/tg9Z6BkR/96318590184.webp') center/cover}
+[data-theme="dark-gold"] .section-header h2{color:var(--primary-light)}
+[data-theme="dark-gold"] .section-header .subtitle{color:var(--gold)}
+[data-theme="dark-gold"] .section-header .subtitle::before,[data-theme="dark-gold"] .section-header .subtitle::after{background:var(--gold)}
 [data-theme="dark-gold"] .about{background:var(--bg)}
-[data-theme="dark-gold"] .about-content h3{color:var(--gold)}
+[data-theme="dark-gold"] .about-content h3{color:var(--primary-light)}
 [data-theme="dark-gold"] .about-content>p{color:var(--gray)}
-[data-theme="dark-gold"] .school-info-item{background:var(--card-bg);border-right-color:var(--gold)}
+[data-theme="dark-gold"] .school-info-item{background:var(--card-bg);border-right-color:var(--primary)}
 [data-theme="dark-gold"] .school-info-item .info-value{color:var(--text)}
-[data-theme="dark-gold"] .section-header h2{color:var(--gold)}
-[data-theme="dark-gold"] .section-header .subtitle{color:var(--secondary)}
-[data-theme="dark-gold"] .section-header .subtitle::before,[data-theme="dark-gold"] .section-header .subtitle::after{background:var(--secondary)}
-[data-theme="dark-gold"] .admin-card{background:var(--card-bg);border-top-color:var(--gold)}
-[data-theme="dark-gold"] .admin-card h3{color:var(--gold)}
+[data-theme="dark-gold"] .stat-card{background:var(--card-bg)}
+[data-theme="dark-gold"] .admin-card{background:var(--card-bg);border-top-color:var(--primary)}
+[data-theme="dark-gold"] .admin-card h3{color:var(--primary-light)}
 [data-theme="dark-gold"] .teachers-section{background:var(--bg)}
-[data-theme="dark-gold"] .subject-title h3{color:var(--gold)}
+[data-theme="dark-gold"] .teachers-search .search-box input{background:var(--card-bg);color:var(--text);border-color:var(--border-color)}
+[data-theme="dark-gold"] .subject-title h3{color:var(--primary-light)}
 [data-theme="dark-gold"] .subject-title{border-bottom-color:var(--border-color)}
-[data-theme="dark-gold"] .teacher-chip{background:var(--card-bg);border-right-color:var(--gold)}
+[data-theme="dark-gold"] .teacher-chip{background:var(--card-bg);border-right-color:var(--primary)}
 [data-theme="dark-gold"] .teacher-chip .t-name{color:var(--text)}
 [data-theme="dark-gold"] .training-card{background:var(--card-bg)}
-[data-theme="dark-gold"] .training-card h4{color:var(--gold)}
+[data-theme="dark-gold"] .training-card h4{color:var(--primary-light)}
 [data-theme="dark-gold"] .gallery-section{background:var(--bg)}
-[data-theme="dark-gold"] .video-title{color:var(--gold)}
-[data-theme="dark-gold"] .features{background:var(--bg)}
-[data-theme="dark-gold"] .feature-card{background:var(--card-bg)}
-[data-theme="dark-gold"] .feature-card h3{color:var(--gold)}
-[data-theme="dark-gold"] .feature-card .icon{background:rgba(212,160,23,.1);color:var(--gold)}
-[data-theme="dark-gold"] .stage-card{background:var(--card-bg)}
-[data-theme="dark-gold"] .stage-body h3{color:var(--gold)}
-[data-theme="dark-gold"] .stage-body ul li{background:rgba(212,160,23,.1);color:var(--gold)}
-[data-theme="dark-gold"] .activity-card{background:var(--card-bg)}
-[data-theme="dark-gold"] .activity-body h3{color:var(--gold)}
-[data-theme="dark-gold"] .hamburger span{background:var(--gold)}
-[data-theme="dark-gold"] .map-section{background:linear-gradient(135deg,#1a1a2e,#0d0d15)}
-[data-theme="dark-gold"] .quick-links{background:var(--bg);border-bottom-color:var(--border-color)}
-[data-theme="dark-gold"] .quick-link{background:var(--card-bg);color:var(--text)}
-[data-theme="dark-gold"] ::-webkit-scrollbar-track{background:#0d0d15}
-[data-theme="dark-gold"] ::-webkit-scrollbar-thumb{background:var(--gold)}
+[data-theme="dark-gold"] .gallery-item{border-color:#1e2d42}
+[data-theme="dark-gold"] .video-title{color:var(--primary-light)}
+[data-theme="dark-gold"] .feature-card{background:var(--card-bg);border:1px solid var(--border-color)}
+[data-theme="dark-gold"] .feature-card h3{color:var(--primary-light)}
+[data-theme="dark-gold"] .feature-card .icon{background:rgba(91,155,213,.1);color:var(--primary-light)}
+[data-theme="dark-gold"] .features{background:var(--card-bg)}
+[data-theme="dark-gold"] .stage-card{background:var(--card-bg);border:1px solid var(--border-color)}
+[data-theme="dark-gold"] .stage-body h3{color:var(--primary-light)}
+[data-theme="dark-gold"] .stage-body ul li{background:rgba(91,155,213,.08);color:var(--text)}
+[data-theme="dark-gold"] .activity-card{background:var(--card-bg);border:1px solid var(--border-color)}
+[data-theme="dark-gold"] .activity-body h3{color:var(--primary-light)}
+[data-theme="dark-gold"] .hamburger span{background:var(--text)}
+[data-theme="dark-gold"] .map-section{background:var(--card-bg)}
 [data-theme="dark-gold"] .glass{background:var(--glass-bg);border-color:var(--glass-border)}
-[data-theme="dark-gold"] .guestbook-form-card{background:var(--card-bg)}
-[data-theme="dark-gold"] .guestbook-form-card h3{color:var(--gold)}
-[data-theme="dark-gold"] .input-wrap input,[data-theme="dark-gold"] .input-wrap textarea{background:var(--bg);color:var(--text);border-color:var(--border-color)}
-[data-theme="dark-gold"] .message-card{background:var(--card-bg)}
-[data-theme="dark-gold"] .message-card .msg-name{color:var(--gold)}
-[data-theme="dark-gold"] .teachers-search .search-box input{background:var(--card-bg);color:var(--text);border-color:var(--border-color)}
 [data-theme="dark-gold"] .guestbook-section{background:var(--bg)}
-[data-theme="dark-gold"] #chatbotToggle{background:var(--gradient);border-color:rgba(212,160,23,.3)}
-[data-theme="dark-gold"] #chatbotPanel{background:var(--bg)}
-[data-theme="dark-gold"] .cb-header{background:linear-gradient(135deg,#1a1a2e,#0d0d15)}
+[data-theme="dark-gold"] .guestbook-form-card{background:var(--card-bg);border:1px solid var(--border-color)}
+[data-theme="dark-gold"] .guestbook-form-card h3{color:var(--primary-light)}
+[data-theme="dark-gold"] .input-wrap input,[data-theme="dark-gold"] .input-wrap textarea{background:var(--bg);color:var(--text);border-color:var(--border-color)}
+[data-theme="dark-gold"] .message-card{background:var(--card-bg);border:1px solid var(--border-color)}
+[data-theme="dark-gold"] .message-card .msg-name{color:var(--primary-light)}
+[data-theme="dark-gold"] .footer{background:#080c14;border-top:1px solid var(--border-color)}
+[data-theme="dark-gold"] ::-webkit-scrollbar-track{background:var(--bg)}
+[data-theme="dark-gold"] ::-webkit-scrollbar-thumb{background:var(--primary)}
+/* Chatbot dark */
+[data-theme="dark-gold"] #chatbotToggle{background:var(--gradient)}
+[data-theme="dark-gold"] #chatbotPanel{background:var(--bg);border:1px solid var(--border-color)}
+[data-theme="dark-gold"] .cb-header{background:linear-gradient(135deg,#1e3a5f,#0d1117)}
 [data-theme="dark-gold"] .cb-body{background:var(--card-bg)}
 [data-theme="dark-gold"] .cb-bot .cb-msg-bubble{background:var(--bg);color:var(--text)}
 [data-theme="dark-gold"] .cb-user .cb-msg-bubble{background:var(--gradient)}
@@ -73,7 +132,9 @@
 [data-theme="dark-gold"] .cb-input-wrap input{color:var(--text)}
 [data-theme="dark-gold"] .cb-ai-features{background:var(--card-bg);border-top-color:var(--border-color)}
 [data-theme="dark-gold"] .cb-ai-feature-btn{background:var(--bg);color:var(--text);border-color:var(--border-color)}
-[data-theme="dark-gold"] .tools-modal{background:var(--bg)}
+[data-theme="dark-gold"] .cb-ai-feature-btn:hover{border-color:var(--primary);color:var(--primary-light)}
+/* Calc dark */
+[data-theme="dark-gold"] .tools-modal{background:var(--bg);border:1px solid var(--border-color)}
 [data-theme="dark-gold"] .calc-student-info{background:var(--card-bg)}
 [data-theme="dark-gold"] .calc-student-info input,[data-theme="dark-gold"] .calc-student-info select{background:var(--bg);color:var(--text);border-color:var(--border-color)}
 [data-theme="dark-gold"] .calc-subjects-card{background:var(--card-bg)}
@@ -81,17 +142,28 @@
 [data-theme="dark-gold"] .calc-result-card{background:var(--card-bg)}
 [data-theme="dark-gold"] .calc-mode-selector{background:var(--card-bg)}
 [data-theme="dark-gold"] .calc-mode-btn{background:var(--bg);border-color:var(--border-color);color:var(--text)}
-[data-theme="dark-gold"] .calc-mode-btn.active{background:var(--gold);color:var(--dark);border-color:var(--gold)}
-[data-theme="dark-gold"] .calc-term-tab.active{background:var(--gold);color:var(--dark);border-color:var(--gold)}
+[data-theme="dark-gold"] .calc-mode-btn.active{background:var(--gradient);color:#fff;border-color:transparent}
+[data-theme="dark-gold"] .calc-term-tab.active{background:var(--gradient);color:#fff;border-color:transparent}
 [data-theme="dark-gold"] .calc-subjects-card-header{background:var(--gradient)}
-[data-theme="dark-gold"] .calc-subjects-table thead th{background:rgba(212,160,23,.06)}
-[data-theme="dark-gold"] .calc-term-total-row{background:rgba(212,160,23,.04)}
+[data-theme="dark-gold"] .calc-subjects-table thead th{background:rgba(91,155,213,.06)}
+[data-theme="dark-gold"] .calc-term-total-row{background:rgba(91,155,213,.04)}
 [data-theme="dark-gold"] .calc-result-progress{background:rgba(255,255,255,.06)}
 [data-theme="dark-gold"] .calc-detail-bar-wrap{background:rgba(255,255,255,.06)}
 [data-theme="dark-gold"] .quiz-option{background:var(--card-bg);border-color:var(--border-color);color:var(--text)}
-[data-theme="dark-gold"] .quiz-option:hover{border-color:var(--gold)}
+[data-theme="dark-gold"] .quiz-option:hover{border-color:var(--primary);color:var(--primary-light)}
 [data-theme="dark-gold"] .strength-card{background:var(--card-bg)}
 [data-theme="dark-gold"] .badge-card{background:var(--card-bg)}
+/* Settings dark */
+[data-theme="dark-gold"] .settings-panel{background:var(--card-bg)}
+[data-theme="dark-gold"] .settings-section{background:var(--bg);border-color:var(--border-color)}
+[data-theme="dark-gold"] .settings-footer{background:var(--bg);border-color:var(--border-color)}
+[data-theme="dark-gold"] .theme-card{background:var(--bg);border-color:var(--border-color)}
+[data-theme="dark-gold"] .theme-card-label{color:var(--text)}
+[data-theme="dark-gold"] .fs-btn{background:var(--bg);border-color:var(--border-color)}
+[data-theme="dark-gold"] .fs-btn.active{background:rgba(91,155,213,.1);border-color:var(--primary)}
+[data-theme="dark-gold"] .lang-btn{background:var(--bg);border-color:var(--border-color)}
+[data-theme="dark-gold"] .lang-btn.active{background:rgba(91,155,213,.1);border-color:var(--primary)}
+[data-theme="dark-gold"] .lang-name{color:var(--text)}
 [data-theme="dark"] .tool-card:hover {
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4),
               0 0 30px rgba(218, 165, 32, 0.15) !important;
@@ -144,7 +216,41 @@ textarea:focus::placeholder {
   opacity: 0.3;
   transform: translateX(5px);
 }
+.honors-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 20px;
+}
 
+.honor-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.honor-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.honor-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover; 
+  border-bottom: 4px solid var(--gold);
+}
+
+.honor-card h3 {
+  padding: 15px 10px;
+  color: var(--primary);
+  font-size: 1.2rem;
+  margin: 0;
+}
 ::selection {
   background: rgba(218, 165, 32, 0.3);
   color: inherit;
@@ -239,7 +345,8 @@ img,
 
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{font-family:'Cairo',sans-serif;overflow-x:hidden;color:var(--text);background:var(--bg);line-height:1.7;transition:background .3s,color .3s}
+body{font-family:'Tajawal',sans-serif;overflow-x:hidden;color:var(--text);background:var(--bg);line-height:1.8;transition:background .3s,color .3s}
+h1,h2,h3,.navbar,.logo-text{font-family:'Cairo',sans-serif}
 ::-webkit-scrollbar{width:8px}
 ::-webkit-scrollbar-track{background:var(--light)}
 ::-webkit-scrollbar-thumb{background:var(--primary);border-radius:4px}
@@ -315,38 +422,62 @@ body{font-family:'Cairo',sans-serif;overflow-x:hidden;color:var(--text);backgrou
 .ticker-scroll{display:inline-block;white-space:nowrap;animation:ticker 30s linear infinite;font-weight:600;font-size:.88rem}
 @keyframes ticker{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
 
-.settings-btn{position:fixed;top:50%;right:0;transform:translateY(-50%);z-index:2000;width:48px;height:48px;background:var(--gradient-gold);border:none;border-radius:14px 0 0 14px;color:#fff;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-lg);transition:var(--tr)}
-.settings-btn:hover{width:55px}
-.settings-btn i{animation:spin 3s linear infinite}
+.settings-btn{position:fixed;top:50%;right:0;transform:translateY(-50%);z-index:2000;width:46px;height:90px;background:var(--gradient);border:none;border-radius:14px 0 0 14px;color:#fff;font-size:1rem;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;box-shadow:-4px 0 20px rgba(26,63,111,0.25);transition:var(--tr)}
+.settings-btn:hover{width:54px}
+.settings-btn i{animation:spin 4s linear infinite}
+.settings-btn span{font-size:.55rem;font-weight:700;writing-mode:vertical-rl;letter-spacing:1px;opacity:.85}
 @keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
-.settings-panel{position:fixed;top:0;right:-320px;width:310px;height:100%;background:var(--navbar-bg);z-index:2500;box-shadow:-5px 0 30px rgba(0,0,0,.2);transition:right .3s ease;overflow-y:auto;backdrop-filter:blur(15px)}
+.settings-panel{position:fixed;top:0;right:-340px;width:320px;height:100%;background:var(--card-bg);z-index:2500;box-shadow:-8px 0 40px rgba(26,63,111,0.18);transition:right .35s cubic-bezier(0.4,0,0.2,1);overflow-y:auto;display:flex;flex-direction:column}
 .settings-panel.open{right:0}
-.settings-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:2400;display:none;backdrop-filter:blur(3px)}
+.settings-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,28,46,.45);z-index:2400;display:none;backdrop-filter:blur(4px)}
 .settings-overlay.show{display:block}
-.settings-header{padding:22px;background:var(--gradient);color:#fff;display:flex;justify-content:space-between;align-items:center}
-.settings-header h3{font-size:1.1rem;font-weight:700;display:flex;align-items:center;gap:8px}
-.settings-close{background:rgba(255,255,255,.2);border:none;color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;transition:var(--tr)}
+
+/* Settings Header */
+.settings-header{padding:24px 22px 20px;background:var(--gradient);color:#fff;display:flex;justify-content:space-between;align-items:center;flex-shrink:0}
+.settings-header-info{display:flex;align-items:center;gap:12px}
+.settings-header-icon{width:42px;height:42px;background:rgba(255,255,255,.15);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.settings-header h3{font-size:1.05rem;font-weight:800;margin:0}
+.settings-header p{font-size:.72rem;opacity:.75;margin:2px 0 0}
+.settings-close{background:rgba(255,255,255,.15);border:none;color:#fff;width:34px;height:34px;border-radius:10px;cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center;transition:var(--tr);flex-shrink:0}
 .settings-close:hover{background:rgba(255,255,255,.3);transform:rotate(90deg)}
-.settings-body{padding:22px}
-.settings-group{margin-bottom:28px}
-.settings-group-title{font-size:.85rem;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
-.settings-group-title i{color:var(--gold)}
-.theme-options{display:grid;gap:10px}
-.theme-option{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:14px;cursor:pointer;transition:var(--tr);border:2px solid transparent;background:var(--card-bg)}
-.theme-option:hover{border-color:var(--gold)}
-.theme-option.active{border-color:var(--gold);background:rgba(212,160,23,.08)}
-.theme-option .theme-preview{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
-.theme-option .theme-info h4{font-size:.92rem;color:var(--text);font-weight:700}
-.theme-option .theme-info span{font-size:.75rem;color:var(--gray)}
-.lang-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.lang-option{padding:16px 14px;border-radius:14px;text-align:center;cursor:pointer;transition:var(--tr);border:2px solid transparent;background:var(--card-bg)}
-.lang-option:hover{border-color:var(--gold)}
-.lang-option.active{border-color:var(--gold);background:rgba(212,160,23,.08)}
-.lang-option h4{font-size:.88rem;color:var(--text);font-weight:700}
-.lang-option span{font-size:.72rem;color:var(--gray)}
-.settings-footer{padding:18px 22px;border-top:1px solid var(--border-color);text-align:center}
-.settings-footer p{font-size:.75rem;color:var(--gray)}
-.settings-footer .dev{color:var(--gold);font-weight:700}
+
+/* Settings Body */
+.settings-body{padding:20px;flex:1;display:flex;flex-direction:column;gap:6px}
+.settings-section{background:var(--bg);border-radius:16px;padding:16px;border:1px solid var(--border-color)}
+.settings-section-title{font-size:.75rem;font-weight:800;color:var(--gray);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.settings-section-title i{color:var(--gold);font-size:.85rem}
+
+/* Theme Cards */
+.theme-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.theme-card{padding:14px 12px;border-radius:12px;cursor:pointer;border:2px solid transparent;background:var(--card-bg);transition:var(--tr);display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.theme-card:hover{border-color:var(--gold);transform:translateY(-2px)}
+.theme-card.active{border-color:var(--gold);background:linear-gradient(135deg,rgba(201,153,44,.08),rgba(184,130,30,.05));box-shadow:0 4px 16px rgba(201,153,44,.15)}
+.theme-card.active .theme-card-label{color:var(--gold)}
+.theme-card-preview{width:48px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:2px}
+.theme-card-label{font-size:.78rem;font-weight:700;color:var(--text)}
+.theme-card-sub{font-size:.65rem;color:var(--gray)}
+
+/* Font Size Slider style */
+.font-size-btns{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.fs-btn{padding:12px 8px;border-radius:12px;cursor:pointer;border:2px solid transparent;background:var(--card-bg);transition:var(--tr);text-align:center}
+.fs-btn:hover{border-color:var(--primary-light)}
+.fs-btn.active{border-color:var(--primary);background:rgba(26,63,111,.06)}
+.fs-btn .fs-letter{display:block;color:var(--primary);font-weight:800;line-height:1}
+.fs-btn .fs-label{font-size:.68rem;color:var(--gray);margin-top:4px;display:block}
+
+/* Language Toggle */
+.lang-toggle{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.lang-btn{padding:12px;border-radius:12px;cursor:pointer;border:2px solid transparent;background:var(--card-bg);transition:var(--tr);display:flex;align-items:center;gap:10px}
+.lang-btn:hover{border-color:var(--primary-light)}
+.lang-btn.active{border-color:var(--primary);background:rgba(26,63,111,.06)}
+.lang-flag{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.lang-name{font-size:.8rem;font-weight:700;color:var(--text)}
+.lang-sub{font-size:.65rem;color:var(--gray)}
+
+/* Settings Footer */
+.settings-footer{padding:16px 20px;border-top:1px solid var(--border-color);text-align:center;flex-shrink:0;background:var(--bg)}
+.settings-footer p{font-size:.72rem;color:var(--gray);margin:0}
+.settings-footer .dev{color:var(--primary);font-weight:800;font-size:.8rem;margin-top:4px}
 * {
   user-select: none;
 }
@@ -362,19 +493,10 @@ body{font-family:'Cairo',sans-serif;overflow-x:hidden;color:var(--text);backgrou
 .top-bar-social a{color:#fff;font-size:1.1rem;transition:var(--tr);width:32px;height:32px;background:rgba(255,255,255,.08);border-radius:8px;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.1)}
 .top-bar-social a:hover{color:var(--gold);transform:translateY(-2px)}
 
-.navbar{background:var(--navbar-bg);padding:12px 0;position:sticky;top:0;z-index:1000;box-shadow:var(--shadow);transition:all .3s ease;backdrop-filter:blur(15px)}
-.navbar.scrolled{padding:6px 0;box-shadow:0 5px 30px rgba(0,0,0,.15)}
+.navbar{background:var(--navbar-bg);padding:12px 0;position:sticky;top:0;z-index:1000;box-shadow:var(--shadow-sm);transition:all .3s ease;backdrop-filter:blur(16px) saturate(180%);-webkit-backdrop-filter:blur(16px) saturate(180%)}
+.navbar.scrolled{padding:6px 0;box-shadow:0 4px 20px rgba(0,0,0,.12);background:var(--navbar-bg)}
+[data-theme="dark-gold"] .navbar.scrolled{box-shadow:0 4px 20px rgba(0,0,0,.4)}
 .navbar .container{display:flex;justify-content:space-between;align-items:center}
-.navbar, nav {
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  transition: all 0.3s ease;
-}
-
-.navbar.scrolled, nav.scrolled {
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  background: rgba(var(--bg-rgb, 255,255,255), 0.85) !important;
-}
 
 .nav-link, .navbar a {
   position: relative;
@@ -576,16 +698,77 @@ body{font-family:'Cairo',sans-serif;overflow-x:hidden;color:var(--text);backgrou
 .training-card span{font-size:.78rem;color:var(--secondary);font-weight:600}
 
 .gallery-section{background:var(--bg);transition:var(--tr)}
-.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.gallery-item{position:relative;border-radius:15px;overflow:hidden;cursor:pointer;box-shadow:var(--shadow);transition:var(--tr);aspect-ratio:1}
-.gallery-item:hover{transform:translateY(-5px) scale(1.02);box-shadow:var(--shadow-lg)}
-.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-.gallery-item:hover img{transform:scale(1.1)}
-.gallery-item .gallery-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to top,rgba(26,82,118,.9) 0%,transparent 70%);display:flex;align-items:flex-end;justify-content:center;padding:16px;opacity:0;transition:opacity .3s}
-.gallery-item:hover .gallery-overlay{opacity:1}
+
+/* Fan/Spread Gallery Layout - overlapping like reference image */
+.gallery-grid{
+  display:flex;
+  flex-direction:column;
+  gap:120px;
+  padding:30px 10px 60px;
+}
+.gallery-fan-row{
+  position:relative;
+  height:360px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+/* Base card */
+.gallery-item{
+  position:absolute;
+  width:200px;
+  height:260px;
+  border-radius:20px;
+  overflow:hidden;
+  cursor:pointer;
+  box-shadow:0 20px 50px rgba(0,0,0,0.35);
+  transition:transform 0.35s cubic-bezier(0.25,0.46,0.45,0.94),box-shadow 0.35s ease;
+  border:4px solid #fff;
+  transform-origin:bottom center;
+}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.gallery-item.hovered img{transform:scale(1.08)}
+.gallery-item .gallery-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to top,rgba(26,82,118,.85) 0%,transparent 60%);display:flex;align-items:flex-end;justify-content:center;padding:16px;opacity:0;transition:opacity .3s}
+.gallery-item.hovered .gallery-overlay{opacity:1}
 .gallery-overlay span{color:#fff;font-size:.8rem;font-weight:600}
-.gallery-overlay .zoom-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;background:rgba(255,255,255,.25);backdrop-filter:blur(8px);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem}
-.gallery-item.large{grid-column:span 2;grid-row:span 2}
+.gallery-overlay .zoom-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;background:rgba(255,255,255,.25);backdrop-filter:blur(8px);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.1rem}
+
+/* 5 cards - fan positions (base, no hover) */
+.gallery-fan-row .gallery-item:nth-child(1){--r:-22deg;--tx:-220px;--ty:30px;transform:rotate(-22deg) translate(-220px,30px);z-index:1}
+.gallery-fan-row .gallery-item:nth-child(2){--r:-11deg;--tx:-110px;--ty:10px;transform:rotate(-11deg) translate(-110px,10px);z-index:2}
+.gallery-fan-row .gallery-item:nth-child(3){--r:0deg;--tx:0px;--ty:-10px;transform:rotate(0deg) translate(0px,-10px);z-index:5;width:220px;height:290px;box-shadow:0 30px 70px rgba(0,0,0,0.45)}
+.gallery-fan-row .gallery-item:nth-child(4){--r:11deg;--tx:110px;--ty:10px;transform:rotate(11deg) translate(110px,10px);z-index:2}
+.gallery-fan-row .gallery-item:nth-child(5){--r:22deg;--tx:220px;--ty:30px;transform:rotate(22deg) translate(220px,30px);z-index:1}
+
+/* 4 cards */
+.gallery-fan-row.fan-4 .gallery-item:nth-child(1){--r:-18deg;--tx:-165px;--ty:25px;transform:rotate(-18deg) translate(-165px,25px);z-index:1}
+.gallery-fan-row.fan-4 .gallery-item:nth-child(2){--r:-6deg;--tx:-55px;--ty:5px;transform:rotate(-6deg) translate(-55px,5px);z-index:2}
+.gallery-fan-row.fan-4 .gallery-item:nth-child(3){--r:6deg;--tx:55px;--ty:5px;transform:rotate(6deg) translate(55px,5px);z-index:2}
+.gallery-fan-row.fan-4 .gallery-item:nth-child(4){--r:18deg;--tx:165px;--ty:25px;transform:rotate(18deg) translate(165px,25px);z-index:1}
+
+/* 3 cards */
+.gallery-fan-row.fan-3 .gallery-item:nth-child(1){--r:-15deg;--tx:-140px;--ty:20px;transform:rotate(-15deg) translate(-140px,20px);z-index:1}
+.gallery-fan-row.fan-3 .gallery-item:nth-child(2){--r:0deg;--tx:0px;--ty:-10px;transform:rotate(0deg) translate(0px,-10px);z-index:3;width:220px;height:290px}
+.gallery-fan-row.fan-3 .gallery-item:nth-child(3){--r:15deg;--tx:140px;--ty:20px;transform:rotate(15deg) translate(140px,20px);z-index:1}
+
+/* hovered state - JS adds this class to ONE item at a time */
+.gallery-item.hovered{
+  transform:rotate(var(--r)) translate(var(--tx), calc(var(--ty) - 30px)) scale(1.07) !important;
+  z-index:20 !important;
+  box-shadow:0 40px 80px rgba(0,0,0,0.55) !important;
+}
+
+@media(max-width:768px){
+  .gallery-grid{gap:90px}
+  .gallery-fan-row{height:260px}
+  .gallery-item{width:130px;height:170px;border-width:3px}
+  .gallery-fan-row .gallery-item:nth-child(1){--r:-22deg;--tx:-140px;--ty:20px;transform:rotate(-22deg) translate(-140px,20px);z-index:1}
+  .gallery-fan-row .gallery-item:nth-child(2){--r:-11deg;--tx:-70px;--ty:8px;transform:rotate(-11deg) translate(-70px,8px);z-index:2}
+  .gallery-fan-row .gallery-item:nth-child(3){--r:0deg;--tx:0px;--ty:-8px;transform:rotate(0deg) translate(0,-8px);z-index:5;width:145px;height:190px}
+  .gallery-fan-row .gallery-item:nth-child(4){--r:11deg;--tx:70px;--ty:8px;transform:rotate(11deg) translate(70px,8px);z-index:2}
+  .gallery-fan-row .gallery-item:nth-child(5){--r:22deg;--tx:140px;--ty:20px;transform:rotate(22deg) translate(140px,20px);z-index:1}
+  .gallery-fan-row.fan-3 .gallery-item:nth-child(2){width:145px;height:190px}
+}
 .video-section{margin-top:55px;text-align:center}
 .video-title{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:25px;color:var(--primary);font-size:1.3rem;font-weight:800;transition:var(--tr)}
 .video-title i{color:var(--secondary);font-size:1.5rem}
@@ -739,116 +922,165 @@ body{font-family:'Cairo',sans-serif;overflow-x:hidden;color:var(--text);backgrou
 .fade-up{opacity:0;transform:translateY(30px);transition:all .5s ease}
 .fade-up.visible{opacity:1;transform:translateY(0)}
 
-#chatbotToggle{position:fixed;bottom:25px;right:25px;z-index:2000;width:60px;height:60px;background:var(--gradient);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.5rem;cursor:pointer;box-shadow:0 8px 30px rgba(26,82,118,.4);transition:all .3s ease;border:3px solid rgba(255,255,255,.2)}
-#chatbotToggle:hover{transform:scale(1.1)}
-#chatbotToggle.active{background:var(--gradient-red);animation:none}
-.chat-badge{position:absolute;top:-4px;right:-4px;width:22px;height:22px;background:var(--secondary);color:#fff;border-radius:50%;font-size:.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;border:2px solid #fff}
+/* ====== CHATBOT - تصميم جديد ====== */
+#chatbotToggle{
+  position:fixed;bottom:28px;right:28px;z-index:2000;
+  width:58px;height:58px;
+  background:var(--gradient);
+  border-radius:18px;
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:1.3rem;cursor:pointer;
+  box-shadow:0 8px 24px rgba(26,63,111,.35);
+  transition:all .3s ease;border:none;
+}
+#chatbotToggle:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(26,63,111,.45)}
+#chatbotToggle.active{background:var(--gradient-red)}
+.chat-badge{
+  position:absolute;top:-6px;right:-6px;
+  width:20px;height:20px;
+  background:var(--secondary);color:#fff;
+  border-radius:50%;font-size:.65rem;font-weight:800;
+  display:flex;align-items:center;justify-content:center;
+  border:2px solid var(--card-bg);
+  animation:pulse-badge 2s infinite;
+}
+@keyframes pulse-badge{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
 
 #chatbotPanel{
-  position:fixed;
-  bottom:100px;
-  right:25px;
-  width:400px;
-  max-height:600px;
-  background:var(--bg);
-  border-radius:24px;
-  box-shadow:0 20px 60px rgba(0,0,0,.2);
-  z-index:2000;
-  display:flex;
-  flex-direction:column;
-  overflow:hidden;
-  transform:scale(0) translateY(20px);
-  transform-origin:bottom right;
-  transition:transform .3s ease,opacity .3s;
-  opacity:0;
-  pointer-events:none
+  position:fixed;bottom:100px;right:28px;
+  width:380px;max-height:580px;
+  background:var(--card-bg);
+  border-radius:20px;
+  box-shadow:0 20px 60px rgba(0,0,0,.18),0 0 0 1px var(--border-color);
+  z-index:2000;display:flex;flex-direction:column;overflow:hidden;
+  transform:scale(0.92) translateY(16px);transform-origin:bottom right;
+  transition:transform .28s cubic-bezier(0.4,0,0.2,1),opacity .28s ease;
+  opacity:0;pointer-events:none;
 }
 #chatbotPanel.open{transform:scale(1) translateY(0);opacity:1;pointer-events:auto}
 
-.cb-header{background:var(--gradient);color:#fff;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;min-height:72px}
-.cb-header-info{display:flex;align-items:center;gap:12px}
-.cb-avatar{width:42px;height:42px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;border:2px solid rgba(255,255,255,.3)}
-.cb-header-info h4{font-size:.95rem;font-weight:700;margin:0}
-.cb-status{font-size:.72rem;opacity:.85;display:flex;align-items:center;gap:5px}
-.cb-status i{font-size:.45rem;color:#2ecc71}
-.cb-header-actions{display:flex;gap:6px}
-.cb-header-actions button{background:rgba(255,255,255,.15);border:none;color:#fff;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:.85rem;display:flex;align-items:center;justify-content:center;transition:var(--tr)}
-.cb-header-actions button:hover{background:rgba(255,255,255,.3)}
+.cb-header{
+  background:var(--gradient);color:#fff;
+  padding:16px 18px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.cb-header-info{display:flex;align-items:center;gap:10px}
+.cb-avatar{
+  width:38px;height:38px;
+  background:rgba(255,255,255,.18);
+  border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;
+}
+.cb-header-info h4{font-size:.9rem;font-weight:800;margin:0}
+.cb-status{font-size:.68rem;opacity:.8;display:flex;align-items:center;gap:4px;margin-top:2px}
+.cb-status i{font-size:.4rem;color:#4ade80}
+.cb-header-actions{display:flex;gap:5px}
+.cb-header-actions button{
+  background:rgba(255,255,255,.12);border:none;color:#fff;
+  width:30px;height:30px;border-radius:8px;
+  cursor:pointer;font-size:.8rem;
+  display:flex;align-items:center;justify-content:center;
+  transition:var(--tr);
+}
+.cb-header-actions button:hover{background:rgba(255,255,255,.25)}
 
 .cb-body{
-  flex:1;
-  overflow-y:auto;
-  overflow-x:hidden;
-  padding:18px 16px;
-  display:flex;
-  flex-direction:column;
-  gap:14px;
-  min-height:200px;
-  max-height:350px;
-  background:var(--card-bg);
+  flex:1;overflow-y:auto;padding:16px;
+  display:flex;flex-direction:column;gap:12px;
+  min-height:180px;max-height:300px;
+  background:var(--bg);
   scroll-behavior:smooth;
-  overscroll-behavior:contain;
-  -webkit-overflow-scrolling:touch
 }
-.cb-body::-webkit-scrollbar{
-  width:6px
-}
-.cb-body::-webkit-scrollbar-track{
-  background:rgba(0,0,0,.05);
-  border-radius:10px;
-  margin:8px 0
-}
-.cb-body::-webkit-scrollbar-thumb{
-  background:linear-gradient(180deg, var(--gold), var(--primary));
-  border-radius:10px;
-  border:1px solid rgba(255,255,255,.1);
-  transition:background .3s
-}
-.cb-body::-webkit-scrollbar-thumb:hover{
-  background:linear-gradient(180deg, var(--primary), var(--gold))
-}
-.cb-body::-webkit-scrollbar-thumb:active{
-  background:var(--secondary)
-}
+.cb-body::-webkit-scrollbar{width:4px}
+.cb-body::-webkit-scrollbar-track{background:transparent}
+.cb-body::-webkit-scrollbar-thumb{background:var(--border-color);border-radius:4px}
 
-.cb-body{
-  scrollbar-width:thin;
-  scrollbar-color:var(--gold) rgba(0,0,0,.05)
-}
-
-
-.cb-msg{display:flex;gap:10px;animation:msgIn .3s ease}
-@keyframes msgIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.cb-msg{display:flex;gap:8px;animation:msgIn .25s ease}
+@keyframes msgIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .cb-bot{flex-direction:row}
 .cb-user{flex-direction:row-reverse}
-.cb-msg-avatar{width:32px;height:32px;background:var(--gradient);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.8rem;flex-shrink:0;margin-top:4px}
-.cb-msg-bubble{max-width:80%;padding:12px 16px;border-radius:18px;font-size:.85rem;line-height:1.7;position:relative;word-break:break-word}
-.cb-bot .cb-msg-bubble{background:var(--bg);color:var(--text);border-bottom-left-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
-.cb-user .cb-msg-bubble{background:var(--gradient);color:#fff;border-bottom-right-radius:4px}
-.cb-msg-time{font-size:.65rem;opacity:.6;margin-top:6px;text-align:left}
+.cb-msg-avatar{
+  width:28px;height:28px;
+  background:var(--gradient);border-radius:9px;
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:.72rem;flex-shrink:0;margin-top:2px;
+}
+.cb-msg-bubble{
+  max-width:78%;padding:10px 14px;
+  border-radius:14px;font-size:.83rem;line-height:1.65;
+  word-break:break-word;
+}
+.cb-bot .cb-msg-bubble{
+  background:var(--card-bg);color:var(--text);
+  border-bottom-left-radius:4px;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+  border:1px solid var(--border-color);
+}
+.cb-user .cb-msg-bubble{
+  background:var(--gradient);color:#fff;
+  border-bottom-right-radius:4px;
+}
+.cb-msg-time{font-size:.6rem;opacity:.5;margin-top:4px}
 .cb-user .cb-msg-time{text-align:right}
 
-.cb-typing{display:flex;gap:4px;padding:8px 16px;align-items:center}
-.cb-typing span{width:8px;height:8px;background:var(--gray);border-radius:50%;animation:typingDot 1.4s infinite}
+.cb-typing{display:flex;gap:4px;padding:8px 14px;align-items:center}
+.cb-typing span{width:7px;height:7px;background:var(--gray);border-radius:50%;animation:typingDot 1.4s infinite}
 .cb-typing span:nth-child(2){animation-delay:.2s}
 .cb-typing span:nth-child(3){animation-delay:.4s}
-@keyframes typingDot{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-8px);opacity:1}}
+@keyframes typingDot{0%,60%,100%{transform:translateY(0);opacity:.35}30%{transform:translateY(-7px);opacity:1}}
 
-.cb-suggestions{padding:10px 16px;display:flex;flex-wrap:wrap;gap:6px;border-top:1px solid var(--border-color);background:var(--bg)}
-.cb-suggestions button{padding:7px 14px;border-radius:50px;border:1.5px solid var(--border-color);background:var(--card-bg);color:var(--text);font-size:.75rem;font-weight:600;cursor:pointer;transition:var(--tr);font-family:'Cairo',sans-serif;white-space:nowrap;display:inline-flex;align-items:center;gap:5px}
-.cb-suggestions button:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.cb-ai-features{
+  padding:10px 14px;
+  display:grid;grid-template-columns:1fr 1fr;gap:6px;
+  border-top:1px solid var(--border-color);
+  background:var(--card-bg);
+}
+.cb-ai-feature-btn{
+  padding:7px 10px;border-radius:10px;
+  border:1.5px solid var(--border-color);
+  background:var(--bg);color:var(--text);
+  font-size:.7rem;font-weight:700;cursor:pointer;
+  transition:var(--tr);font-family:'Tajawal',sans-serif;
+  display:flex;align-items:center;gap:5px;text-align:right;
+}
+.cb-ai-feature-btn:hover{border-color:var(--primary);color:var(--primary);background:rgba(26,63,111,.05)}
+.cb-ai-feature-btn i{font-size:.8rem;color:var(--primary);flex-shrink:0}
 
-.cb-footer{padding:12px 16px;border-top:1px solid var(--border-color);background:var(--bg)}
-.cb-input-wrap{display:flex;align-items:center;gap:8px;background:var(--card-bg);border:2px solid var(--border-color);border-radius:50px;padding:8px 12px 8px 16px;transition:var(--tr)}
-.cb-input-wrap:focus-within{border-color:var(--gold)}
-.cb-input-wrap input{flex:1;border:none;outline:none;background:transparent;font-family:'Cairo',sans-serif;font-size:.88rem;color:var(--text)}
-#cbSendBtn{width:36px;height:36px;background:var(--gradient);border:none;border-radius:50%;color:#fff;font-size:.9rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--tr);flex-shrink:0}
-#cbSendBtn:hover{transform:scale(1.1)}
+.cb-suggestions{
+  padding:8px 14px;display:flex;flex-wrap:wrap;gap:5px;
+  border-top:1px solid var(--border-color);background:var(--card-bg);
+}
+.cb-suggestions button{
+  padding:5px 12px;border-radius:50px;
+  border:1.5px solid var(--border-color);
+  background:var(--bg);color:var(--text);
+  font-size:.72rem;font-weight:600;cursor:pointer;
+  transition:var(--tr);font-family:'Tajawal',sans-serif;
+}
+.cb-suggestions button:hover{border-color:var(--primary);color:var(--primary)}
 
-.cb-ai-features{padding:10px 16px;display:grid;grid-template-columns:1fr 1fr;gap:6px;border-top:1px solid var(--border-color);background:var(--card-bg)}
-.cb-ai-feature-btn{padding:8px 10px;border-radius:12px;border:1.5px solid var(--border-color);background:var(--bg);color:var(--text);font-size:.72rem;font-weight:600;cursor:pointer;transition:var(--tr);font-family:'Cairo',sans-serif;display:flex;align-items:center;gap:6px;text-align:right}
-.cb-ai-feature-btn:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-1px)}
-.cb-ai-feature-btn i{font-size:.85rem;color:var(--gold);flex-shrink:0}
+.cb-footer{padding:10px 14px;border-top:1px solid var(--border-color);background:var(--card-bg)}
+.cb-input-wrap{
+  display:flex;align-items:center;gap:8px;
+  background:var(--bg);
+  border:1.5px solid var(--border-color);
+  border-radius:12px;padding:7px 10px 7px 14px;
+  transition:var(--tr);
+}
+.cb-input-wrap:focus-within{border-color:var(--primary);box-shadow:0 0 0 3px rgba(26,63,111,.08)}
+.cb-input-wrap input{
+  flex:1;border:none;outline:none;background:transparent;
+  font-family:'Tajawal',sans-serif;font-size:.85rem;color:var(--text);
+}
+#cbSendBtn{
+  width:32px;height:32px;
+  background:var(--gradient);border:none;border-radius:9px;
+  color:#fff;font-size:.8rem;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:var(--tr);flex-shrink:0;
+}
+#cbSendBtn:hover{transform:scale(1.08)}
 
 .tools-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.55);z-index:2600;display:none;backdrop-filter:blur(4px)}
 .tools-overlay.show{display:block}
@@ -1063,22 +1295,79 @@ body{font-family:'Cairo',sans-serif;overflow-x:hidden;color:var(--text);backgrou
 .badge-card .badge-info h5{font-size:.8rem;font-weight:700;color:var(--text)}
 .badge-card .badge-info span{font-size:.68rem;color:var(--gray)}
 
-@media(max-width:1024px){.features-grid,.gallery-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:repeat(2,1fr)}.gallery-item.large{grid-column:span 1;grid-row:span 1}}
-@media(max-width:768px){.hamburger{display:flex}.nav-links{display:none;position:absolute;top:100%;right:0;left:0;background:var(--navbar-bg);flex-direction:column;padding:15px;box-shadow:var(--shadow-lg);gap:3px;border-radius:0 0 16px 16px;backdrop-filter:blur(15px)}.nav-links.active{display:flex;animation:slideDown .3s ease}@keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}.hero .container{flex-direction:column;text-align:center}.hero-content h2{font-size:1.6rem}.hero-buttons{justify-content:center}.hero-cards{max-width:250px}.hero-card:nth-child(2),.hero-card:nth-child(3){transform:none}.about-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:repeat(2,1fr)}.stat-card::after{display:none}.stages-grid,.features-grid,.activities-grid{grid-template-columns:1fr}.stage-card{flex-direction:column}.stage-icon{width:100%;min-height:120px}.gallery-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr}.school-info-grid{grid-template-columns:1fr}.section-header h2{font-size:1.4rem}.admin-grid{grid-template-columns:1fr}.guestbook-grid{grid-template-columns:1fr}.guestbook-form-card{position:static}.hero-scroll-indicator{display:none}.teachers-search{flex-direction:column}.search-box{max-width:100%}.teachers-flex{grid-template-columns:1fr}
-#chatbotToggle{width:52px;height:52px;font-size:1.3rem;bottom:20px;right:20px}
-#chatbotPanel{right:0;left:0;bottom:0;width:100%;max-height:85vh;border-radius:24px 24px 0 0;transform:translateY(100%);transform-origin:bottom center}
+@media(max-width:1024px){.features-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){
+.hamburger{display:flex}
+.nav-links{display:none;position:absolute;top:100%;right:0;left:0;background:var(--navbar-bg);flex-direction:column;padding:12px;box-shadow:var(--shadow-lg);gap:3px;border-radius:0 0 16px 16px;backdrop-filter:blur(15px);border-top:1px solid var(--border-color)}
+.nav-links.active{display:flex;animation:slideDown .3s ease}
+@keyframes slideDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+.nav-links a{padding:12px 16px;border-radius:10px;font-size:.9rem}
+/* Hero */
+.hero{min-height:auto;padding:80px 0 50px}
+.hero .container{flex-direction:column;text-align:center;gap:30px}
+.hero-content h2{font-size:1.6rem}
+.hero-content h3{font-size:.8rem}
+.hero-buttons{justify-content:center;flex-wrap:wrap;gap:8px}
+.hero-buttons .btn{font-size:.82rem;padding:10px 18px}
+.hero-image{width:100%}
+.hero-cards{grid-template-columns:1fr 1fr;max-width:100%;gap:8px}
+.hero-card{padding:14px 10px}
+.hero-card:nth-child(2),.hero-card:nth-child(3){transform:none}
+.hero-scroll-indicator{display:none}
+/* Topbar */
+.top-bar-info{gap:8px}
+.top-bar-info span{font-size:.7rem}
+/* Quick links */
+.quick-links .container{gap:6px;justify-content:center}
+.quick-link{font-size:.75rem;padding:7px 12px}
+/* About */
+.about-grid{grid-template-columns:1fr}
+.about-image-box{max-height:200px;overflow:hidden}
+.about-image{height:200px;object-fit:cover;border-radius:14px}
+/* Stats */
+.stats-grid{grid-template-columns:1fr 1fr;gap:12px}
+.stat-card::after{display:none}
+/* Admin */
+.admin-grid{grid-template-columns:1fr;max-width:280px;margin:0 auto}
+/* Info grid */
+.school-info-grid{grid-template-columns:1fr}
+/* Section headers */
+.section-header h2{font-size:1.3rem}
+.section{padding:50px 0}
+/* Teachers */
+.teachers-search{flex-direction:column;gap:10px}
+.search-box{max-width:100%}
+.teachers-flex{grid-template-columns:1fr}
+/* Stages/Features/Activities */
+.stages-grid,.features-grid,.activities-grid{grid-template-columns:1fr}
+.stage-card{flex-direction:column}
+.stage-icon{width:100%;min-height:90px}
+/* Gallery - mobile fan */
+.gallery-grid{gap:80px;padding:20px 0 40px}
+.gallery-fan-row{height:230px}
+.gallery-item{width:115px;height:148px;border-width:3px}
+.gallery-fan-row .gallery-item:nth-child(1){--r:-22deg;--tx:-122px;--ty:18px;transform:rotate(-22deg) translate(-122px,18px)}
+.gallery-fan-row .gallery-item:nth-child(2){--r:-11deg;--tx:-61px;--ty:7px;transform:rotate(-11deg) translate(-61px,7px)}
+.gallery-fan-row .gallery-item:nth-child(3){--r:0deg;--tx:0px;--ty:-7px;transform:rotate(0deg) translate(0,-7px);width:128px;height:165px}
+.gallery-fan-row .gallery-item:nth-child(4){--r:11deg;--tx:61px;--ty:7px;transform:rotate(11deg) translate(61px,7px)}
+.gallery-fan-row .gallery-item:nth-child(5){--r:22deg;--tx:122px;--ty:18px;transform:rotate(22deg) translate(122px,18px)}
+.gallery-fan-row.fan-3 .gallery-item:nth-child(2){width:128px;height:165px}
+/* Guestbook */
+.guestbook-grid{grid-template-columns:1fr}
+.guestbook-form-card{position:static}
+/* Footer */
+.footer-grid{grid-template-columns:1fr}
+/* Chatbot */
+#chatbotToggle{width:50px;height:50px;font-size:1.1rem;bottom:18px;right:15px}
+#chatbotPanel{right:0;left:0;bottom:0;width:100%;max-height:88vh;border-radius:20px 20px 0 0;transform:translateY(100%);transform-origin:bottom center}
 #chatbotPanel.open{transform:translateY(0)}
-.cb-body{
-  max-height:45vh;
-  -webkit-overflow-scrolling:touch;
-  overscroll-behavior:contain
-}
-.cb-body::-webkit-scrollbar{
-  width:4px
-}
-.tools-modal{width:98%;max-height:95vh;border-radius:20px}
+.cb-body{max-height:42vh;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.cb-body::-webkit-scrollbar{width:3px}
+.cb-ai-features{grid-template-columns:1fr 1fr}
+/* Calc */
+.tools-modal{width:98%;max-height:95vh;border-radius:16px}
 .calc-student-info{grid-template-columns:1fr}
-.calc-score-input{width:55px;font-size:.82rem;padding:6px 4px}
+.calc-score-input{width:52px;font-size:.8rem;padding:5px 4px}
 .calc-result-stats{grid-template-columns:1fr}
 .calc-result-stat{border-left:none;border-bottom:1px solid var(--border-color)}
 .calc-result-stat:last-child{border-bottom:none}
@@ -1087,11 +1376,35 @@ body{font-family:'Cairo',sans-serif;overflow-x:hidden;color:var(--text);backgrou
 .calc-detail-bar-wrap{display:none}
 .calc-mode-selector{flex-wrap:wrap}
 .calc-mode-btn{min-width:45%}
-.cb-ai-features{grid-template-columns:1fr}
 .strength-cards{grid-template-columns:1fr}
+/* Settings */
+.settings-panel{width:88vw;max-width:300px}
+.settings-btn{height:68px;width:38px;font-size:.9rem}
 }
-@media(max-width:480px){.container{padding:0 15px}.hero-content h2{font-size:1.3rem}.section{padding:50px 0}.hero-cards{grid-template-columns:1fr;max-width:180px}.quick-links .container{gap:8px}.quick-link{padding:6px 12px;font-size:.75rem}
-#chatbotToggle{width:48px;height:48px;font-size:1.2rem;bottom:15px;right:15px}
+
+@media(max-width:480px){
+.container{padding:0 12px}
+.hero-content h2{font-size:1.25rem}
+.section{padding:40px 0}
+.hero-cards{grid-template-columns:1fr 1fr;gap:6px}
+.hero-card{padding:10px 8px}
+.hero-card h4{font-size:1rem}
+.stats-grid{grid-template-columns:1fr 1fr;gap:8px}
+.section-header h2{font-size:1.15rem}
+.logo-text h1{font-size:.72rem}
+.logo-text span,.logo-text small{display:none}
+.logo-icon{width:40px;height:40px;font-size:1rem}
+.gallery-grid{gap:65px}
+.gallery-fan-row{height:190px}
+.gallery-item{width:95px;height:122px}
+.gallery-fan-row .gallery-item:nth-child(1){--tx:-100px;--ty:16px;transform:rotate(-22deg) translate(-100px,16px)}
+.gallery-fan-row .gallery-item:nth-child(2){--tx:-50px;--ty:6px;transform:rotate(-11deg) translate(-50px,6px)}
+.gallery-fan-row .gallery-item:nth-child(3){--tx:0px;--ty:-5px;transform:rotate(0deg) translate(0,-5px);width:105px;height:136px}
+.gallery-fan-row .gallery-item:nth-child(4){--tx:50px;--ty:6px;transform:rotate(11deg) translate(50px,6px)}
+.gallery-fan-row .gallery-item:nth-child(5){--tx:100px;--ty:16px;transform:rotate(22deg) translate(100px,16px)}
+.gallery-fan-row.fan-3 .gallery-item:nth-child(2){width:105px;height:136px}
+.quick-links .container{gap:5px}
+.quick-link{font-size:.7rem;padding:6px 10px}
 }
 </style>
 </head>
@@ -1108,24 +1421,75 @@ body{font-family:'Cairo',sans-serif;overflow-x:hidden;color:var(--text);backgrou
 </div>
 </div>
 
-<button class="settings-btn" onclick="toggleSettings()"><i class="fas fa-cog"></i></button>
+<button class="settings-btn" onclick="toggleSettings()"><i class="fas fa-cog"></i><span>إعدادات</span></button>
 <div class="settings-overlay" id="settingsOverlay" onclick="toggleSettings()"></div>
 <div class="settings-panel" id="settingsPanel">
-<div class="settings-header"><h3><i class="fas fa-sliders-h"></i> الإعدادات</h3><button class="settings-close" onclick="toggleSettings()"><i class="fas fa-times"></i></button></div>
-<div class="settings-body">
-<div class="settings-group"><div class="settings-group-title"><i class="fas fa-palette"></i> المظهر</div>
-<div class="theme-options">
-<div class="theme-option active" onclick="setTheme('light',this)"><div class="theme-preview" style="background:linear-gradient(135deg,#f8f9fa,#e9ecef)"><i class="fas fa-sun" style="color:#f39c12"></i></div><div class="theme-info"><h4>الوضع العادي</h4><span>ألوان فاتحة ومريحة</span></div></div>
-<div class="theme-option" onclick="setTheme('dark-gold',this)"><div class="theme-preview" style="background:linear-gradient(135deg,#0d0d15,#1a1a28)"><i class="fas fa-moon" style="color:#f39c12"></i></div><div class="theme-info"><h4>الوضع الداكن</h4><span>داكن ذهبي أنيق</span></div></div>
-</div></div>
-<div class="settings-group"><div class="settings-group-title"><i class="fas fa-text-height"></i> حجم الخط</div>
-<div class="theme-options">
-<div class="theme-option" id="fs-small" onclick="setFontSize('small',this)"><div class="theme-preview" style="background:rgba(26,82,118,.1)"><span style="font-size:.8rem;color:var(--primary);font-weight:800">أ</span></div><div class="theme-info"><h4>صغير</h4></div></div>
-<div class="theme-option active" id="fs-medium" onclick="setFontSize('medium',this)"><div class="theme-preview" style="background:rgba(26,82,118,.1)"><span style="font-size:1.1rem;color:var(--primary);font-weight:800">أ</span></div><div class="theme-info"><h4>متوسط</h4></div></div>
-<div class="theme-option" id="fs-large" onclick="setFontSize('large',this)"><div class="theme-preview" style="background:rgba(26,82,118,.1)"><span style="font-size:1.4rem;color:var(--primary);font-weight:800">أ</span></div><div class="theme-info"><h4>كبير</h4></div></div>
-</div></div>
+
+<div class="settings-header">
+  <div class="settings-header-info">
+    <div class="settings-header-icon"><i class="fas fa-sliders-h"></i></div>
+    <div><h3 data-i18n="settings-title">الإعدادات</h3><p data-i18n="settings-sub">تخصيص المظهر والتفضيلات</p></div>
+  </div>
+  <button class="settings-close" onclick="toggleSettings()"><i class="fas fa-times"></i></button>
 </div>
-<div class="settings-footer"><p>تم التطوير بواسطة</p><p class="dev"><i class="fas fa-star" style="color:var(--gold)"></i> محمد الجوهري نوار <i class="fas fa-star" style="color:var(--gold)"></i></p></div>
+
+<div class="settings-body">
+
+  <div class="settings-section">
+    <div class="settings-section-title"><i class="fas fa-palette"></i> <span data-i18n="settings-theme">المظهر</span></div>
+    <div class="theme-cards">
+      <div class="theme-card active" id="theme-light" onclick="setTheme('light',this)">
+        <div class="theme-card-preview" style="background:linear-gradient(135deg,#eef2f7,#dde3ec)"><i class="fas fa-sun" style="color:#c9992c"></i></div>
+        <span class="theme-card-label" data-i18n="theme-light">فاتح</span>
+        <span class="theme-card-sub" data-i18n="theme-light-sub">كلاسيكي مريح</span>
+      </div>
+      <div class="theme-card" id="theme-dark" onclick="setTheme('dark-gold',this)">
+        <div class="theme-card-preview" style="background:linear-gradient(135deg,#0d1117,#161d2b)"><i class="fas fa-moon" style="color:#5b9bd5"></i></div>
+        <span class="theme-card-label" data-i18n="theme-dark">داكن أنيق</span>
+        <span class="theme-card-sub" data-i18n="theme-dark-sub">أنيق وهادئ</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="settings-section">
+    <div class="settings-section-title"><i class="fas fa-text-height"></i> <span data-i18n="settings-fontsize">حجم الخط</span></div>
+    <div class="font-size-btns">
+      <div class="fs-btn" id="fs-small" onclick="setFontSize('small',this)">
+        <span class="fs-letter" style="font-size:.85rem">أ</span>
+        <span class="fs-label" data-i18n="fs-small">صغير</span>
+      </div>
+      <div class="fs-btn active" id="fs-medium" onclick="setFontSize('medium',this)">
+        <span class="fs-letter" style="font-size:1.1rem">أ</span>
+        <span class="fs-label" data-i18n="fs-medium">متوسط</span>
+      </div>
+      <div class="fs-btn" id="fs-large" onclick="setFontSize('large',this)">
+        <span class="fs-letter" style="font-size:1.35rem">أ</span>
+        <span class="fs-label" data-i18n="fs-large">كبير</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="settings-section">
+    <div class="settings-section-title"><i class="fas fa-language"></i> <span data-i18n="settings-lang">اللغة / Language</span></div>
+    <div class="lang-toggle">
+      <div class="lang-btn active" id="lang-ar" onclick="setLang('ar',this)">
+        <div class="lang-flag" style="background:rgba(192,57,43,.1)">🇪🇬</div>
+        <div><div class="lang-name">العربية</div><div class="lang-sub">Arabic</div></div>
+      </div>
+      <div class="lang-btn" id="lang-en" onclick="setLang('en',this)">
+        <div class="lang-flag" style="background:rgba(26,63,111,.08)">🇬🇧</div>
+        <div><div class="lang-name">English</div><div class="lang-sub">الإنجليزية</div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="settings-footer">
+  <p data-i18n="settings-dev-by">تم التطوير بواسطة</p>
+  <p class="dev"><i class="fas fa-star" style="color:var(--gold)"></i> محمد الجوهري نوار <i class="fas fa-star" style="color:var(--gold)"></i></p>
+</div>
+
 </div>
 
 <div class="flag-stripe"></div>
@@ -1134,9 +1498,9 @@ body{font-family:'Cairo',sans-serif;overflow-x:hidden;color:var(--text);backgrou
 <div class="container">
 <div class="top-bar-info">
 <span><i class="fas fa-calendar-alt"></i> <span id="todayDate"></span></span>
-<span><i class="fas fa-map-marker-alt"></i> مركز طنطا - الغربية</span>
+<span><i class="fas fa-map-marker-alt"></i> <span data-i18n="topbar-location">مركز طنطا - الغربية</span></span>
 <span><i class="fas fa-clock"></i> <span id="liveTime">8:00 ص</span></span>
-<span><i class="fas fa-circle" style="color:#2ecc71;font-size:.5rem"></i> متصل الآن: <span id="onlineCount">0</span></span>
+<span><i class="fas fa-circle" style="color:#2ecc71;font-size:.5rem"></i> <span data-i18n="topbar-online">متصل الآن</span>: <span id="onlineCount">0</span></span>
 </div>
 <div class="top-bar-social"><a href="https://www.facebook.com/groups/862073497191096" target="_blank"><i class="fab fa-facebook-f"></i></a></div>
 </div>
@@ -1146,14 +1510,14 @@ body{font-family:'Cairo',sans-serif;overflow-x:hidden;color:var(--text);backgrou
 <div class="container">
 <a href="#" class="logo"><div class="logo-icon"><i class="fas fa-school"></i></div><div class="logo-text"><h1>مدرسة شهيد أحمد شلبي أبو الخير</h1><span>للتعليم الأساسي</span><small>إدارة غرب طنطا - مركز طنطا</small></div></a>
 <ul class="nav-links" id="navLinks">
-<li><a href="#home" class="active">الرئيسية</a></li>
-<li><a href="#about">عن المدرسة</a></li>
-<li><a href="#admin">الإدارة</a></li>
-<li><a href="#teachers">المعلمون</a></li>
-<li><a href="#gallery">التكريمات</a></li>
-<li><a href="#stages">المراحل</a></li>
-<li><a href="#activities">الأنشطة</a></li>
-<li><a href="#guestbook">سجل الزوار</a></li>
+<li><a href="#home" class="active" data-i18n="nav-home">الرئيسية</a></li>
+<li><a href="#about" data-i18n="nav-about">عن المدرسة</a></li>
+<li><a href="#admin" data-i18n="nav-admin">الإدارة</a></li>
+<li><a href="#teachers" data-i18n="nav-teachers">المعلمون</a></li>
+<li><a href="#gallery" data-i18n="nav-gallery">التكريمات</a></li>
+<li><a href="#stages" data-i18n="nav-stages">المراحل</a></li>
+<li><a href="#activities" data-i18n="nav-activities">الأنشطة</a></li>
+<li><a href="#guestbook" data-i18n="nav-guestbook">سجل الزوار</a></li>
 </ul>
 <div class="hamburger" id="hamburgerBtn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </div>
@@ -1161,19 +1525,19 @@ body{font-family:'Cairo',sans-serif;overflow-x:hidden;color:var(--text);backgrou
 
 <div class="news-ticker">
 <div class="container">
-<div class="ticker-label"><i class="fas fa-bullhorn"></i> أخبار</div>
-<div class="ticker-text"><span class="ticker-scroll">مواعيد التقديم 2025/2026 متاحة الآن | تهنئة للطلاب المتفوقين | النتائج متاحة لدى الإدارة | المدرسة حاصلة على شهادة الجودة | أسبوع الأنشطة المدرسية قريبا</span></div>
+<div class="ticker-label"><i class="fas fa-bullhorn"></i> <span data-i18n="ticker-label">أخبار</span></div>
+<div class="ticker-text"><span class="ticker-scroll" data-i18n="ticker-text">مواعيد التقديم 2025/2026 متاحة الآن | تهنئة للطلاب المتفوقين | النتائج متاحة لدى الإدارة | المدرسة حاصلة على شهادة الجودة | أسبوع الأنشطة المدرسية قريبا</span></div>
 </div>
 </div>
 
 <div class="quick-links">
 <div class="container">
-<a href="#about" class="quick-link"><i class="fas fa-school"></i> عن المدرسة</a>
-<a href="#teachers" class="quick-link"><i class="fas fa-chalkboard-teacher"></i> المعلمون</a>
-<a href="#gallery" class="quick-link"><i class="fas fa-images"></i> التكريمات</a>
-<a href="#stages" class="quick-link"><i class="fas fa-graduation-cap"></i> المراحل</a>
-<a href="#guestbook" class="quick-link highlight-link"><i class="fas fa-pen-fancy"></i> سجل الزوار</a>
-<a href="https://www.facebook.com/groups/862073497191096" target="_blank" class="quick-link"><i class="fab fa-facebook"></i> فيسبوك</a>
+<a href="#about" class="quick-link"><i class="fas fa-school"></i> <span data-i18n="ql-about">عن المدرسة</span></a>
+<a href="#teachers" class="quick-link"><i class="fas fa-chalkboard-teacher"></i> <span data-i18n="ql-teachers">المعلمون</span></a>
+<a href="#gallery" class="quick-link"><i class="fas fa-images"></i> <span data-i18n="ql-gallery">التكريمات</span></a>
+<a href="#stages" class="quick-link"><i class="fas fa-graduation-cap"></i> <span data-i18n="ql-stages">المراحل</span></a>
+<a href="#guestbook" class="quick-link highlight-link"><i class="fas fa-pen-fancy"></i> <span data-i18n="ql-guestbook">سجل الزوار</span></a>
+<a href="https://www.facebook.com/groups/862073497191096" target="_blank" class="quick-link"><i class="fab fa-facebook"></i> <span data-i18n="ql-facebook">فيسبوك</span></a>
 </div>
 </div>
 
@@ -1182,22 +1546,22 @@ body{font-family:'Cairo',sans-serif;overflow-x:hidden;color:var(--text);backgrou
 <div class="hero-floating-shapes"><div class="shape shape-1"></div><div class="shape shape-2"></div><div class="shape shape-3"></div></div>
 <div class="container">
 <div class="hero-content">
-<div class="hero-badge"><i class="fas fa-star"></i> مدرسة حكومية معتمدة من هيئة الجودة</div>
-<h2>مدرسة شهيد <span>أحمد شلبي</span><br>أبو الخير للتعليم الأساسي</h2>
-<h3><i class="fas fa-flag" style="color:var(--gold)"></i> إدارة غرب طنطا - مركز طنطا - محافظة الغربية</h3>
+<div class="hero-badge"><i class="fas fa-star"></i> <span data-i18n="hero-badge">مدرسة حكومية معتمدة من هيئة الجودة</span></div>
+<h2 data-i18n="hero-title">مدرسة شهيد <span>أحمد شلبي</span><br>أبو الخير للتعليم الأساسي</h2>
+<h3><i class="fas fa-flag" style="color:var(--gold)"></i> <span data-i18n="hero-sub">إدارة غرب طنطا - مركز طنطا - محافظة الغربية</span></h3>
 <div class="typing-container"><span class="typing-text" id="typingText"></span><span class="typing-cursor">|</span></div>
 <div class="hero-buttons">
-<a href="#about" class="btn btn-primary"><i class="fas fa-info-circle"></i> تعرف على المدرسة</a>
-<a href="#gallery" class="btn btn-outline"><i class="fas fa-images"></i> صور التكريم</a>
-<a href="#guestbook" class="btn btn-gold"><i class="fas fa-pen-fancy"></i> سجل الزوار</a>
+<a href="#about" class="btn btn-primary"><i class="fas fa-info-circle"></i> <span data-i18n="hero-btn1">تعرف على المدرسة</span></a>
+<a href="#gallery" class="btn btn-outline"><i class="fas fa-images"></i> <span data-i18n="hero-btn2">صور التكريم</span></a>
+<a href="#guestbook" class="btn btn-gold"><i class="fas fa-pen-fancy"></i> <span data-i18n="hero-btn3">سجل الزوار</span></a>
 </div>
 </div>
 <div class="hero-image">
 <div class="hero-cards">
-<div class="hero-card glass"><i class="fas fa-user-graduate"></i><h4>+800</h4><p>طالب وطالبة</p></div>
-<div class="hero-card glass"><i class="fas fa-chalkboard-teacher"></i><h4>+45</h4><p>معلم ومعلمة</p></div>
-<div class="hero-card glass"><i class="fas fa-door-open"></i><h4>+20</h4><p>فصل دراسي</p></div>
-<div class="hero-card glass"><i class="fas fa-award"></i><h4>معتمدة</h4><p>ضمان الجودة</p></div>
+<div class="hero-card glass"><i class="fas fa-user-graduate"></i><h4>+800</h4><p data-i18n="hero-c1">طالب وطالبة</p></div>
+<div class="hero-card glass"><i class="fas fa-chalkboard-teacher"></i><h4>+45</h4><p data-i18n="hero-c2">معلم ومعلمة</p></div>
+<div class="hero-card glass"><i class="fas fa-door-open"></i><h4>+20</h4><p data-i18n="hero-c3">فصل دراسي</p></div>
+<div class="hero-card glass"><i class="fas fa-award"></i><h4 data-i18n="hero-c4">معتمدة</h4><p data-i18n="info-acc-label">ضمان الجودة</p></div>
 </div>
 </div>
 </div>
@@ -1213,16 +1577,16 @@ body{font-family:'Cairo',sans-serif;overflow-x:hidden;color:var(--text);backgrou
 <div class="gov-tag"><i class="fas fa-shield-alt"></i> معتمدة</div>
 </div>
 <div class="about-content fade-up">
-<div class="section-header" style="text-align:right;margin-bottom:15px"><div class="subtitle" style="justify-content:flex-start">عن المدرسة</div></div>
-<h3>مدرسة شهيد أحمد شلبي أبو الخير للتعليم الأساسي</h3>
-<p>تعد مدرسة شهيد أحمد شلبي أبو الخير للتعليم الأساسي واحدة من المدارس الحكومية المتميزة التابعة لإدارة غرب طنطا التعليمية بمركز طنطا، محافظة الغربية. تسمت باسم الشهيد أحمد شلبي أبو الخير تخليدا لذكراه.</p>
+<div class="section-header" style="text-align:right;margin-bottom:15px"><div class="subtitle" style="justify-content:flex-start" data-i18n="about-sub">عن المدرسة</div></div>
+<h3 data-i18n="about-title">مدرسة شهيد أحمد شلبي أبو الخير للتعليم الأساسي</h3>
+<p data-i18n="about-desc">تعد مدرسة شهيد أحمد شلبي أبو الخير للتعليم الأساسي واحدة من المدارس الحكومية المتميزة التابعة لإدارة غرب طنطا التعليمية بمركز طنطا، محافظة الغربية. تسمت باسم الشهيد أحمد شلبي أبو الخير تخليدا لذكراه.</p>
 <div class="school-info-grid">
-<div class="school-info-item"><i class="fas fa-school"></i><div><span class="info-label">اسم المدرسة</span><span class="info-value">شهيد أحمد شلبي أبو الخير</span></div></div>
-<div class="school-info-item"><i class="fas fa-graduation-cap"></i><div><span class="info-label">النوع</span><span class="info-value">تعليم أساسي (ابتدائي + إعدادي)</span></div></div>
-<div class="school-info-item"><i class="fas fa-building"></i><div><span class="info-label">الإدارة</span><span class="info-value">إدارة غرب طنطا</span></div></div>
-<div class="school-info-item"><i class="fas fa-map-marker-alt"></i><div><span class="info-label">الموقع</span><span class="info-value">مركز طنطا - الغربية</span></div></div>
-<div class="school-info-item"><i class="fas fa-flag"></i><div><span class="info-label">المحافظة</span><span class="info-value">الغربية</span></div></div>
-<div class="school-info-item"><i class="fas fa-certificate"></i><div><span class="info-label">الاعتماد</span><span class="info-value">حاصلة على شهادة الجودة</span></div></div>
+<div class="school-info-item"><i class="fas fa-school"></i><div><span class="info-label" data-i18n="info-name-label">اسم المدرسة</span><span class="info-value" data-i18n="info-name-val">شهيد أحمد شلبي أبو الخير</span></div></div>
+<div class="school-info-item"><i class="fas fa-graduation-cap"></i><div><span class="info-label" data-i18n="info-type-label">النوع</span><span class="info-value" data-i18n="info-type-val">تعليم أساسي (ابتدائي + إعدادي)</span></div></div>
+<div class="school-info-item"><i class="fas fa-building"></i><div><span class="info-label" data-i18n="info-admin-label">الإدارة</span><span class="info-value" data-i18n="info-admin-val">إدارة غرب طنطا</span></div></div>
+<div class="school-info-item"><i class="fas fa-map-marker-alt"></i><div><span class="info-label" data-i18n="info-loc-label">الموقع</span><span class="info-value" data-i18n="info-loc-val">مركز طنطا - الغربية</span></div></div>
+<div class="school-info-item"><i class="fas fa-flag"></i><div><span class="info-label" data-i18n="info-gov-label">المحافظة</span><span class="info-value" data-i18n="info-gov-val">الغربية</span></div></div>
+<div class="school-info-item"><i class="fas fa-certificate"></i><div><span class="info-label" data-i18n="info-acc-label">الاعتماد</span><span class="info-value" data-i18n="info-acc-val">حاصلة على شهادة الجودة</span></div></div>
 </div>
 </div>
 </div>
@@ -1232,25 +1596,25 @@ body{font-family:'Cairo',sans-serif;overflow-x:hidden;color:var(--text);backgrou
 <section class="stats">
 <div class="container">
 <div class="stats-grid">
-<div class="stat-card fade-up"><div class="stat-icon-wrap"><i class="fas fa-user-graduate"></i></div><h3 class="counter" data-target="800">0</h3><p>طالب وطالبة</p></div>
-<div class="stat-card fade-up"><div class="stat-icon-wrap"><i class="fas fa-chalkboard-teacher"></i></div><h3 class="counter" data-target="45">0</h3><p>معلم ومعلمة</p></div>
-<div class="stat-card fade-up"><div class="stat-icon-wrap"><i class="fas fa-door-open"></i></div><h3 class="counter" data-target="20">0</h3><p>فصل دراسي</p></div>
-<div class="stat-card fade-up"><div class="stat-icon-wrap"><i class="fas fa-percentage"></i></div><h3 class="counter" data-target="95">0</h3><p>نسبة النجاح %</p></div>
+<div class="stat-card fade-up"><div class="stat-icon-wrap"><i class="fas fa-user-graduate"></i></div><h3 class="counter" data-target="800">0</h3><p data-i18n="stat1">طالب وطالبة</p></div>
+<div class="stat-card fade-up"><div class="stat-icon-wrap"><i class="fas fa-chalkboard-teacher"></i></div><h3 class="counter" data-target="45">0</h3><p data-i18n="stat2">معلم ومعلمة</p></div>
+<div class="stat-card fade-up"><div class="stat-icon-wrap"><i class="fas fa-door-open"></i></div><h3 class="counter" data-target="20">0</h3><p data-i18n="stat3">فصل دراسي</p></div>
+<div class="stat-card fade-up"><div class="stat-icon-wrap"><i class="fas fa-percentage"></i></div><h3 class="counter" data-target="95">0</h3><p data-i18n="stat4">نسبة النجاح %</p></div>
 </div>
 </div>
 </section>
 
 <section class="admin-section section" id="admin">
 <div class="container">
-<div class="section-header fade-up"><div class="subtitle">الإدارة المدرسية</div><h2>إدارة المدرسة</h2><div class="section-divider"></div></div>
+<div class="section-header fade-up"><div class="subtitle" data-i18n="admin-sub">الإدارة المدرسية</div><h2 data-i18n="admin-title">إدارة المدرسة</h2><div class="section-divider"></div></div>
 <div class="admin-grid">
 <div class="admin-card fade-up">
 <div class="admin-avatar" style="padding:0;overflow:hidden;border:4px solid var(--gold)"><img src="https://i.postimg.cc/2jxSsKq2/49315832004.webp" alt="المدير" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
-<h3>أ / محمد الجزار</h3><p class="position">مدير المدرسة</p><p>الإشراف العام على العملية التعليمية والإدارية</p>
+<h3 data-i18n="admin1-name">أ / محمد الجزار</h3><p class="position" data-i18n="admin1-pos">مدير المدرسة</p><p data-i18n="admin1-desc">الإشراف العام على العملية التعليمية والإدارية</p>
 </div>
 <div class="admin-card fade-up">
 <div class="admin-avatar" style="padding:0;overflow:hidden;border:4px solid var(--gold)"><img src="https://i.postimg.cc/ydWP43Py/image-(2).webp" alt="كريمة الجزار" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
-<h3>أ / كريمة الجزار</h3><p class="position">الإدارة</p><p>الشؤون الإدارية والتنظيمية بالمدرسة</p>
+<h3 data-i18n="admin2-name">أ / كريمة الجزار</h3><p class="position" data-i18n="admin2-pos">الإدارة</p><p data-i18n="admin2-desc">الشؤون الإدارية والتنظيمية بالمدرسة</p>
 </div>
 </div>
 </div>
@@ -1258,10 +1622,10 @@ body{font-family:'Cairo',sans-serif;overflow-x:hidden;color:var(--text);backgrou
 
 <section class="teachers-section section" id="teachers">
 <div class="container">
-<div class="section-header fade-up"><div class="subtitle"><i class="fas fa-chalkboard-teacher" style="color:var(--gold)"></i> الهيئة التدريسية</div><h2>معلمو ومعلمات المدرسة</h2><div class="section-divider"></div><p>نخبة من المعلمين والمعلمات المتميزين</p></div>
+<div class="section-header fade-up"><div class="subtitle"><i class="fas fa-chalkboard-teacher" style="color:var(--gold)"></i> <span data-i18n="teachers-sub">الهيئة التدريسية</span></div><h2 data-i18n="teachers-title">معلمو ومعلمات المدرسة</h2><div class="section-divider"></div><p data-i18n="teachers-desc">نخبة من المعلمين والمعلمات المتميزين</p></div>
 <div class="teachers-search fade-up">
-<div class="search-box"><i class="fas fa-search"></i><input type="text" id="teacherSearch" placeholder="ابحث عن معلم..."></div>
-<div class="teacher-count-display"><i class="fas fa-users"></i> إجمالي المعلمين: <strong id="teacherTotal">40+</strong></div>
+<div class="search-box"><i class="fas fa-search"></i><input type="text" id="teacherSearch" placeholder="ابحث عن معلم..." data-i18n-ph="teachers-search-ph"></div>
+<div class="teacher-count-display"><i class="fas fa-users"></i> <span data-i18n="teachers-total">إجمالي المعلمين</span>: <strong id="teacherTotal">40+</strong></div>
 </div>
 
 <div class="subject-group fade-up"><div class="subject-title"><div class="subject-icon" style="background:var(--gradient-gold)"><i class="fas fa-cogs"></i></div><div><h3>وحدة التدريب والجودة</h3></div></div><div class="training-grid"><div class="training-card"><div class="t-icon"><i class="fas fa-user-check"></i></div><div><h4>أ / أماني إلياس</h4><span>موجه وحدة التدريب</span></div></div><div class="training-card"><div class="t-icon"><i class="fas fa-user-cog"></i></div><div><h4>أ / ساره أسامه الحلو</h4><span>مسؤول وحدة التدريب</span></div></div><div class="training-card"><div class="t-icon"><i class="fas fa-user-cog"></i></div><div><h4>أ / عبير واصل</h4><span>مسؤول وحدة التدريب</span></div></div></div></div>
@@ -1294,11 +1658,11 @@ body{font-family:'Cairo',sans-serif;overflow-x:hidden;color:var(--text);backgrou
 
 <section class="gallery-section section" id="gallery">
 <div class="container">
-<div class="section-header fade-up"><div class="subtitle"><i class="fas fa-trophy" style="color:var(--gold)"></i> التكريمات</div><h2>معرض صور التكريم</h2><div class="section-divider"></div></div>
+<div class="section-header fade-up"><div class="subtitle"><i class="fas fa-trophy" style="color:var(--gold)"></i> <span data-i18n="gallery-sub">التكريمات</span></div><h2 data-i18n="gallery-title">معرض صور التكريم</h2><div class="section-divider"></div></div>
 <div class="gallery-grid" id="galleryGrid"></div>
 <div class="video-section fade-up">
-<div class="video-badge"><i class="fas fa-play-circle"></i> فيديو حصري</div>
-<div class="video-title"><i class="fas fa-video"></i> فيديو حفل التكريم</div>
+<div class="video-badge"><i class="fas fa-play-circle"></i> <span data-i18n="video-label">فيديو حصري</span></div>
+<div class="video-title"><i class="fas fa-video"></i> <span data-i18n="video-title">فيديو حفل التكريم</span></div>
 <div class="video-wrapper"><iframe src="https://player.vimeo.com/video/1174007007?badge=0&autopause=0&player_id=0&app_id=58479" allowfullscreen allow="autoplay; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
 </div>
 </div>
@@ -1306,7 +1670,7 @@ body{font-family:'Cairo',sans-serif;overflow-x:hidden;color:var(--text);backgrou
 
 <section class="section" id="stages" style="background:var(--card-bg)">
 <div class="container">
-<div class="section-header fade-up"><div class="subtitle">المراحل التعليمية</div><h2>مراحل التعليم الأساسي</h2><div class="section-divider"></div></div>
+<div class="section-header fade-up"><div class="subtitle" data-i18n="stages-sub">المراحل التعليمية</div><h2 data-i18n="stages-title">مراحل التعليم الأساسي</h2><div class="section-divider"></div></div>
 <div class="stages-grid">
 <div class="stage-card fade-up"><div class="stage-icon"><i class="fas fa-child"></i></div><div class="stage-body"><h3>ابتدائي (1-3)</h3><p>مرحلة التأسيس والبناء</p><ul><li>العربية</li><li>الرياضيات</li><li>الدين</li><li>اكتشف</li><li>English</li></ul></div></div>
 <div class="stage-card fade-up"><div class="stage-icon"><i class="fas fa-book-reader"></i></div><div class="stage-body"><h3>ابتدائي (4-6)</h3><p>مرحلة التطوير والنمو</p><ul><li>العربية</li><li>الرياضيات</li><li>العلوم</li><li>الدراسات</li><li>English</li><li>ICT</li></ul></div></div>
@@ -1318,7 +1682,7 @@ body{font-family:'Cairo',sans-serif;overflow-x:hidden;color:var(--text);backgrou
 
 <section class="features section">
 <div class="container">
-<div class="section-header fade-up"><div class="subtitle">إمكانيات المدرسة</div><h2>ما يميز مدرستنا</h2><div class="section-divider"></div></div>
+<div class="section-header fade-up"><div class="subtitle" data-i18n="features-sub">إمكانيات المدرسة</div><h2 data-i18n="features-title">ما يميز مدرستنا</h2><div class="section-divider"></div></div>
 <div class="features-grid">
 <div class="feature-card fade-up"><div class="icon"><i class="fas fa-chalkboard"></i></div><h3>فصول مجهزة</h3><p>فصول واسعة ومجهزة بأحدث الوسائل</p></div>
 <div class="feature-card fade-up"><div class="icon"><i class="fas fa-laptop"></i></div><h3>معمل حاسب آلي</h3><p>أجهزة حاسب حديثة وإنترنت سريع</p></div>
@@ -1334,7 +1698,7 @@ body{font-family:'Cairo',sans-serif;overflow-x:hidden;color:var(--text);backgrou
 
 <section class="section" id="activities">
 <div class="container">
-<div class="section-header fade-up"><div class="subtitle">الأنشطة المدرسية</div><h2>أنشطة متنوعة ومميزة</h2><div class="section-divider"></div></div>
+<div class="section-header fade-up"><div class="subtitle" data-i18n="activities-sub">الأنشطة المدرسية</div><h2 data-i18n="activities-title">أنشطة متنوعة ومميزة</h2><div class="section-divider"></div></div>
 <div class="activities-grid">
 <div class="activity-card fade-up"><div class="activity-image"><i class="fas fa-running"></i></div><div class="activity-body"><h3>الرياضة والبدنية</h3><p>أنشطة رياضية ومسابقات بين الفصول</p></div></div>
 <div class="activity-card fade-up"><div class="activity-image"><i class="fas fa-palette"></i></div><div class="activity-body"><h3>الفنون والإبداع</h3><p>رسم وأشغال يدوية ومعارض فنية</p></div></div>
@@ -1348,23 +1712,23 @@ body{font-family:'Cairo',sans-serif;overflow-x:hidden;color:var(--text);backgrou
 
 <section class="guestbook-section section" id="guestbook">
 <div class="container">
-<div class="section-header fade-up"><div class="subtitle"><i class="fas fa-pen-fancy" style="color:var(--gold)"></i> سجل الزوار التفاعلي</div><h2>شاركنا رأيك</h2><div class="section-divider"></div><p>اترك رسالتك وانطباعك عن المدرسة</p></div>
+<div class="section-header fade-up"><div class="subtitle"><i class="fas fa-pen-fancy" style="color:var(--gold)"></i> <span data-i18n="guestbook-sub">سجل الزوار التفاعلي</span></div><h2 data-i18n="guestbook-title">شاركنا رأيك</h2><div class="section-divider"></div><p data-i18n="guestbook-desc">اترك رسالتك وانطباعك عن المدرسة</p></div>
 <div class="guestbook-grid">
 <div class="guestbook-form-wrap fade-up">
 <div class="guestbook-form-card">
 <h3><i class="fas fa-pen-fancy"></i> اكتب رسالتك</h3>
 <form id="guestbookForm" onsubmit="submitGuestbook(event)">
-<div class="form-group"><label>الاسم</label><div class="input-wrap"><i class="fas fa-user"></i><input type="text" id="gbName" required maxlength="50" placeholder="اكتب اسمك هنا"></div></div>
-<div class="form-group"><label>رسالتك</label><div class="input-wrap textarea-wrap"><i class="fas fa-comment-dots"></i><textarea id="gbMessage" required maxlength="300" rows="4" placeholder="شاركنا رأيك عن المدرسة..."></textarea></div><small class="char-count"><span id="charCount">0</span>/300</small></div>
-<div class="form-group"><label>التقييم</label><div class="star-rating" id="starRating"><i class="fas fa-star active" data-rate="1"></i><i class="fas fa-star active" data-rate="2"></i><i class="fas fa-star active" data-rate="3"></i><i class="fas fa-star active" data-rate="4"></i><i class="fas fa-star active" data-rate="5"></i></div></div>
-<div class="form-group"><label>اختر تفاعل</label><div class="emoji-picker" id="emojiPicker"><span class="emoji-btn active" data-emoji="heart"><i class="fas fa-heart" style="color:#e74c3c"></i></span><span class="emoji-btn" data-emoji="star"><i class="fas fa-star" style="color:#f39c12"></i></span><span class="emoji-btn" data-emoji="thumbsup"><i class="fas fa-thumbs-up" style="color:#3498db"></i></span><span class="emoji-btn" data-emoji="flag"><i class="fas fa-flag" style="color:#e74c3c"></i></span><span class="emoji-btn" data-emoji="book"><i class="fas fa-book" style="color:#3498db"></i></span></div></div>
-<button type="submit" class="btn btn-primary btn-block" id="submitBtn"><i class="fas fa-paper-plane"></i> إرسال الرسالة</button>
+<div class="form-group"><label data-i18n="gb-label-name">الاسم</label><div class="input-wrap"><i class="fas fa-user"></i><input type="text" id="gbName" required maxlength="50" placeholder="اكتب اسمك هنا" data-i18n-ph="gb-name-ph"></div></div>
+<div class="form-group"><label data-i18n="gb-label-msg">رسالتك</label><div class="input-wrap textarea-wrap"><i class="fas fa-comment-dots"></i><textarea id="gbMessage" required maxlength="300" rows="4" placeholder="شاركنا رأيك عن المدرسة..." data-i18n-ph="gb-msg-ph"></textarea></div><small class="char-count"><span id="charCount">0</span>/300</small></div>
+<div class="form-group"><label data-i18n="gb-label-rating">التقييم</label><div class="star-rating" id="starRating"><i class="fas fa-star active" data-rate="1"></i><i class="fas fa-star active" data-rate="2"></i><i class="fas fa-star active" data-rate="3"></i><i class="fas fa-star active" data-rate="4"></i><i class="fas fa-star active" data-rate="5"></i></div></div>
+<div class="form-group"><label data-i18n="gb-label-emoji">اختر تفاعل</label><div class="emoji-picker" id="emojiPicker"><span class="emoji-btn active" data-emoji="heart"><i class="fas fa-heart" style="color:#e74c3c"></i></span><span class="emoji-btn" data-emoji="star"><i class="fas fa-star" style="color:#f39c12"></i></span><span class="emoji-btn" data-emoji="thumbsup"><i class="fas fa-thumbs-up" style="color:#3498db"></i></span><span class="emoji-btn" data-emoji="flag"><i class="fas fa-flag" style="color:#e74c3c"></i></span><span class="emoji-btn" data-emoji="book"><i class="fas fa-book" style="color:#3498db"></i></span></div></div>
+<button type="submit" class="btn btn-primary btn-block" id="submitBtn"><i class="fas fa-paper-plane"></i> <span data-i18n="gb-submit">إرسال الرسالة</span></button>
 </form>
 </div>
 </div>
 <div class="guestbook-messages fade-up">
-<div class="messages-header"><h3><i class="fas fa-comments"></i> رسائل الزوار</h3><span class="message-count" id="messageCount">0</span></div>
-<div class="messages-list" id="messagesList"><div class="loading-messages"><i class="fas fa-spinner fa-spin"></i> جاري التحميل...</div></div>
+<div class="messages-header"><h3><i class="fas fa-comments"></i> <span data-i18n="gb-msgs-title">رسائل الزوار</span></h3><span class="message-count" id="messageCount">0</span></div>
+<div class="messages-list" id="messagesList"></div>
 </div>
 </div>
 </div>
@@ -1386,11 +1750,11 @@ body{font-family:'Cairo',sans-serif;overflow-x:hidden;color:var(--text);backgrou
 <footer class="footer">
 <div class="container">
 <div class="footer-grid">
-<div class="footer-about"><a href="#" class="logo"><div class="logo-icon"><i class="fas fa-school"></i></div><div class="logo-text"><h1>شهيد أحمد شلبي أبو الخير</h1><span>للتعليم الأساسي</span></div></a><p>مدرسة حكومية معتمدة - إدارة غرب طنطا</p><div class="footer-social"><a href="https://www.facebook.com/groups/862073497191096" target="_blank"><i class="fab fa-facebook-f"></i></a></div></div>
-<div><h3>روابط سريعة</h3><ul class="footer-links"><li><a href="#home"><i class="fas fa-chevron-left"></i> الرئيسية</a></li><li><a href="#about"><i class="fas fa-chevron-left"></i> عن المدرسة</a></li><li><a href="#teachers"><i class="fas fa-chevron-left"></i> المعلمون</a></li><li><a href="#gallery"><i class="fas fa-chevron-left"></i> التكريمات</a></li><li><a href="#guestbook"><i class="fas fa-chevron-left"></i> سجل الزوار</a></li></ul></div>
-<div><h3>بيانات التواصل</h3><ul class="footer-contact-info"><li><i class="fas fa-school"></i><span>شهيد أحمد شلبي أبو الخير</span></li><li><i class="fas fa-user-tie"></i><span>المدير: أ / محمد الجزار</span></li><li><i class="fas fa-map-marker-alt"></i><span>مركز طنطا - محافظة الغربية</span></li><li><i class="fas fa-clock"></i><span>8:00 ص - 12:30 م</span></li></ul></div>
+<div class="footer-about"><a href="#" class="logo"><div class="logo-icon"><i class="fas fa-school"></i></div><div class="logo-text"><h1 data-i18n="info-name-val">شهيد أحمد شلبي أبو الخير</h1><span data-i18n="info-type-label">للتعليم الأساسي</span></div></a><p data-i18n="footer-about-desc">مدرسة حكومية معتمدة - إدارة غرب طنطا</p><div class="footer-social"><a href="https://www.facebook.com/groups/862073497191096" target="_blank"><i class="fab fa-facebook-f"></i></a></div></div>
+<div><h3 data-i18n="footer-links-title">روابط سريعة</h3><ul class="footer-links"><li><a href="#home"><i class="fas fa-chevron-left"></i> <span data-i18n="nav-home">الرئيسية</span></a></li><li><a href="#about"><i class="fas fa-chevron-left"></i> <span data-i18n="nav-about">عن المدرسة</span></a></li><li><a href="#teachers"><i class="fas fa-chevron-left"></i> <span data-i18n="nav-teachers">المعلمون</span></a></li><li><a href="#gallery"><i class="fas fa-chevron-left"></i> <span data-i18n="nav-gallery">التكريمات</span></a></li><li><a href="#guestbook"><i class="fas fa-chevron-left"></i> <span data-i18n="nav-guestbook">سجل الزوار</span></a></li></ul></div>
+<div><h3 data-i18n="footer-contact-title">بيانات التواصل</h3><ul class="footer-contact-info"><li><i class="fas fa-school"></i><span data-i18n="info-name-val">شهيد أحمد شلبي أبو الخير</span></li><li><i class="fas fa-user-tie"></i><span data-i18n="admin1-name">المدير: أ / محمد الجزار</span></li><li><i class="fas fa-map-marker-alt"></i><span data-i18n="info-loc-val">مركز طنطا - محافظة الغربية</span></li><li><i class="fas fa-clock"></i><span>8:00 ص - 12:30 م</span></li></ul></div>
 </div>
-<div class="footer-bottom"><p>&copy; 2025 مدرسة شهيد أحمد شلبي أبو الخير</p><div class="footer-gov"><i class="fas fa-landmark"></i><span>وزارة التربية والتعليم المصرية</span></div></div>
+<div class="footer-bottom"><p>&copy; 2025 <span data-i18n="footer-copy">مدرسة شهيد أحمد شلبي أبو الخير</span></p><div class="footer-gov"><i class="fas fa-landmark"></i><span data-i18n="footer-ministry">وزارة التربية والتعليم المصرية</span></div></div>
 </div>
 </footer>
 
@@ -1417,7 +1781,7 @@ body{font-family:'Cairo',sans-serif;overflow-x:hidden;color:var(--text);backgrou
 <div id="chatbotToggle" onclick="toggleChatbot()"><i class="fas fa-robot"></i><span class="chat-badge" id="chatBadge">1</span></div>
 <div id="chatbotPanel">
 <div class="cb-header">
-<div class="cb-header-info"><div class="cb-avatar"><i class="fas fa-robot"></i></div><div><h4>المساعد الذكي</h4><span class="cb-status"><i class="fas fa-circle"></i> متصل الآن</span></div></div>
+<div class="cb-header-info"><div class="cb-avatar"><i class="fas fa-robot"></i></div><div><h4 data-i18n="cb-title">المساعد الذكي</h4><span class="cb-status"><i class="fas fa-circle"></i> <span data-i18n="cb-status">متصل الآن</span></span></div></div>
 <div class="cb-header-actions"><button onclick="clearChat()" title="مسح"><i class="fas fa-trash-alt"></i></button><button onclick="toggleChatbot()" title="إغلاق"><i class="fas fa-times"></i></button></div>
 </div>
 <div class="cb-body" id="cbBody"></div>
@@ -1437,7 +1801,7 @@ body{font-family:'Cairo',sans-serif;overflow-x:hidden;color:var(--text);backgrou
 <button onclick="sendSuggestion('التقديم')"><i class="fas fa-file-alt"></i> التقديم</button>
 <button onclick="sendSuggestion('الأنشطة')"><i class="fas fa-futbol"></i> الأنشطة</button>
 </div>
-<div class="cb-footer"><div class="cb-input-wrap"><input type="text" id="cbInput" placeholder="اكتب سؤالك هنا..." onkeydown="if(event.key==='Enter')sendMsg()"><button onclick="sendMsg()" id="cbSendBtn"><i class="fas fa-paper-plane"></i></button></div></div>
+<div class="cb-footer"><div class="cb-input-wrap"><input type="text" id="cbInput" placeholder="اكتب سؤالك هنا..." data-i18n-ph="cb-ph" onkeydown="if(event.key==='Enter')sendMsg()"><button onclick="sendMsg()" id="cbSendBtn"><i class="fas fa-paper-plane"></i></button></div></div>
 </div>
 
 <div id="toolsOverlay" class="tools-overlay" onclick="closeTools()"></div>
@@ -1447,41 +1811,87 @@ body{font-family:'Cairo',sans-serif;overflow-x:hidden;color:var(--text);backgrou
 </div>
 
 <script>
-var gbRating=5,gbEmoji='heart',chatOpen=false,calcCurrentMode='both';
+/* ============================================
+   مدرسة شهيد أحمد شلبي أبو الخير
+   الكود مقسّم لأقسام واضحة:
+   1. متغيرات عامة
+   2. معرض الصور
+   3. الإعدادات والترجمة
+   4. سجل الزوار
+   5. المساعد الذكي
+   6. حاسبة الدرجات
+   7. مؤثرات الصفحة
+   8. تهيئة الصفحة
+============================================ */
 
-var imgs=['https://i.postimg.cc/NFMZ2xhn/475455082-8971197432929280-71936.webp','https://i.postimg.cc/ZnM28yZj/475850773-8971197276262629-10766.webp','https://i.postimg.cc/KjHwPgxc/480458190-1321232105820644-14022.webp','https://i.postimg.cc/hv56L7cD/480941268-1321232039153984-37070.webp','https://i.postimg.cc/8c09RrNP/482327820-1923898428418115-59346.webp','https://i.postimg.cc/y6QM429m/482986930-1321231962487325-66714.webp','https://i.postimg.cc/nVRybN71/483525811-1321232062487315-39205.webp','https://i.postimg.cc/fW2Gn1Xm/483562739-1923898535084771-32200.webp','https://i.postimg.cc/ZY7GtX3c/485361009-1325167788760409-98681.webp','https://i.postimg.cc/zDtsZ4Wp/485371369-1325166642093857-78567.webp','https://i.postimg.cc/WpWBLxrH/485787481-1325167035427151-17208.webp','https://i.postimg.cc/kM103L8Y/485807850-1325167305427124-65948.webp','https://i.postimg.cc/Kcq6SCBX/637677101-1670241260624805-67910.webp','https://i.postimg.cc/597hdDLM/638333095-1670241190624812-25404.webp','https://i.postimg.cc/281PzTFK/639912597-1670241217291476-61286.webp'];
+/* --- 1. متغيرات عامة --- */
+var gbRating = 5, gbEmoji = 'heart';
+var chatOpen = false;
+var calcCurrentMode = 'both';
 
-var calcSubjectsPrep=[
-{name:'اللغة العربية',icon:'fas fa-pen-fancy',color:'#e74c3c',t1Max:40,t2Max:40},
-{name:'اللغة الإنجليزية',icon:'fas fa-globe',color:'#9b59b6',t1Max:30,t2Max:30},
-{name:'الدراسات الاجتماعية',icon:'fas fa-globe-africa',color:'#e67e22',t1Max:20,t2Max:20},
-{name:'الرياضيات',icon:'fas fa-calculator',color:'#2980b9',t1Max:30,t2Max:30},
-{name:'العلوم',icon:'fas fa-flask',color:'#27ae60',t1Max:20,t2Max:20}
+var imgs = ['https://i.postimg.cc/NFMZ2xhn/475455082-8971197432929280-71936.webp','https://i.postimg.cc/ZnM28yZj/475850773-8971197276262629-10766.webp','https://i.postimg.cc/KjHwPgxc/480458190-1321232105820644-14022.webp','https://i.postimg.cc/hv56L7cD/480941268-1321232039153984-37070.webp','https://i.postimg.cc/8c09RrNP/482327820-1923898428418115-59346.webp','https://i.postimg.cc/y6QM429m/482986930-1321231962487325-66714.webp','https://i.postimg.cc/nVRybN71/483525811-1321232062487315-39205.webp','https://i.postimg.cc/fW2Gn1Xm/483562739-1923898535084771-32200.webp','https://i.postimg.cc/ZY7GtX3c/485361009-1325167788760409-98681.webp','https://i.postimg.cc/zDtsZ4Wp/485371369-1325166642093857-78567.webp','https://i.postimg.cc/WpWBLxrH/485787481-1325167035427151-17208.webp','https://i.postimg.cc/kM103L8Y/485807850-1325167305427124-65948.webp','https://i.postimg.cc/Kcq6SCBX/637677101-1670241260624805-67910.webp','https://i.postimg.cc/597hdDLM/638333095-1670241190624812-25404.webp','https://i.postimg.cc/281PzTFK/639912597-1670241217291476-61286.webp'];
+
+var calcSubjectsPrep = [
+  { name:'اللغة العربية',    icon:'fas fa-pen-fancy',    color:'#e74c3c', t1Max:40, t2Max:40 },
+  { name:'اللغة الإنجليزية', icon:'fas fa-globe',        color:'#9b59b6', t1Max:30, t2Max:30 },
+  { name:'الدراسات الاجتماعية', icon:'fas fa-globe-africa', color:'#e67e22', t1Max:20, t2Max:20 },
+  { name:'الرياضيات',        icon:'fas fa-calculator',   color:'#2980b9', t1Max:30, t2Max:30 },
+  { name:'العلوم',           icon:'fas fa-flask',        color:'#27ae60', t1Max:20, t2Max:20 }
 ];
 
-var quizBank=[
-{q:'ما عاصمة مصر؟',opts:['القاهرة','الإسكندرية','طنطا','أسوان'],correct:0},
-{q:'كم عدد أضلاع المثلث؟',opts:['4','3','5','6'],correct:1},
-{q:'ما العنصر الكيميائي للماء؟',opts:['CO2','H2O','O2','NaCl'],correct:1},
-{q:'من فتح مصر؟',opts:['صلاح الدين','عمرو بن العاص','خالد بن الوليد','محمد الفاتح'],correct:1},
-{q:'ما أكبر كوكب في المجموعة الشمسية؟',opts:['المريخ','زحل','المشتري','نبتون'],correct:2},
-{q:'كم عدد سور القرآن الكريم؟',opts:['100','114','120','110'],correct:1},
-{q:'ما ناتج 15 × 8؟',opts:['100','120','130','115'],correct:1},
-{q:'أين يقع نهر النيل؟',opts:['آسيا','أوروبا','أفريقيا','أمريكا'],correct:2},
-{q:'ما عاصمة فرنسا؟',opts:['لندن','باريس','برلين','مدريد'],correct:1},
-{q:'كم عدد أركان الإسلام؟',opts:['4','5','6','3'],correct:1}
+var quizBank = [
+  {q:'ما عاصمة مصر؟',            opts:['القاهرة','الإسكندرية','طنطا','أسوان'],       correct:0},
+  {q:'كم عدد أضلاع المثلث؟',     opts:['4','3','5','6'],                              correct:1},
+  {q:'ما العنصر الكيميائي للماء؟',opts:['CO2','H2O','O2','NaCl'],                     correct:1},
+  {q:'من فتح مصر؟',               opts:['صلاح الدين','عمرو بن العاص','خالد بن الوليد','محمد الفاتح'], correct:1},
+  {q:'ما أكبر كوكب في المجموعة الشمسية؟', opts:['المريخ','زحل','المشتري','نبتون'],   correct:2},
+  {q:'كم عدد سور القرآن الكريم؟', opts:['100','114','120','110'],                     correct:1},
+  {q:'ما ناتج 15 × 8؟',          opts:['100','120','130','115'],                      correct:1},
+  {q:'أين يقع نهر النيل؟',        opts:['آسيا','أوروبا','أفريقيا','أمريكا'],          correct:2},
+  {q:'ما عاصمة فرنسا؟',          opts:['لندن','باريس','برلين','مدريد'],               correct:1},
+  {q:'كم عدد أركان الإسلام؟',    opts:['4','5','6','3'],                              correct:1}
 ];
+
+/* --- 2. معرض الصور --- */
 
 (function(){
 var gg=document.getElementById('galleryGrid');
 if(gg){
-var h='';
-imgs.forEach(function(src,i){
-var cls=i===0||i===5?'gallery-item large fade-up':'gallery-item fade-up';
-h+='<div class="'+cls+'" onclick="openLB('+i+')"><img src="'+src+'" alt="تكريم" loading="lazy"><div class="gallery-overlay"><div class="zoom-icon"><i class="fas fa-search-plus"></i></div><span>تكريم</span></div></div>';
-});
-gg.innerHTML=h;
+  var h='';
+  var perRow=5;
+  for(var r=0;r<imgs.length;r+=perRow){
+    var rowImgs=imgs.slice(r,r+perRow);
+    var fanClass='gallery-fan-row';
+    if(rowImgs.length===4) fanClass+=' fan-4';
+    else if(rowImgs.length===3) fanClass+=' fan-3';
+    else if(rowImgs.length<=2) fanClass+=' fan-3';
+    h+='<div class="'+fanClass+'">';
+    rowImgs.forEach(function(src,i){
+      var globalIdx=r+i;
+      var cls='gallery-item fade-up';
+      h+='<div class="'+cls+'" onclick="openLB('+globalIdx+')"><img src="'+src+'" alt="تكريم" loading="lazy"><div class="gallery-overlay"><div class="zoom-icon"><i class="fas fa-search-plus"></i></div><span>تكريم</span></div></div>';
+    });
+    h+='</div>';
+  }
+  gg.innerHTML=h;
 }
+})();
+
+// Gallery hover - JS controlled to prevent glitch between overlapping cards
+(function(){
+  document.querySelectorAll('.gallery-fan-row').forEach(function(row){
+    var items=row.querySelectorAll('.gallery-item');
+    items.forEach(function(item){
+      item.addEventListener('mouseenter',function(){
+        // remove hovered from ALL items in this row first
+        items.forEach(function(i){i.classList.remove('hovered')});
+        item.classList.add('hovered');
+      });
+      item.addEventListener('mouseleave',function(){
+        item.classList.remove('hovered');
+      });
+    });
+  });
 })();
 
 var ci=0;
@@ -1491,6 +1901,7 @@ function navLB(d){ci+=d;if(ci>=imgs.length)ci=0;if(ci<0)ci=imgs.length-1;documen
 document.getElementById('lightbox').addEventListener('click',function(e){if(e.target===this)closeLB()});
 document.addEventListener('keydown',function(e){if(!document.getElementById('lightbox').classList.contains('active'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowRight')navLB(-1);if(e.key==='ArrowLeft')navLB(1)});
 
+/* --- 7. مؤثرات الصفحة والأدوات العامة --- */
 function toggleMenu(){document.getElementById('navLinks').classList.toggle('active');document.getElementById('hamburgerBtn').classList.toggle('active')}
 document.querySelectorAll('.nav-links a').forEach(function(l){l.addEventListener('click',function(){document.getElementById('navLinks').classList.remove('active');document.getElementById('hamburgerBtn').classList.remove('active')})});
 function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'})}
@@ -1512,15 +1923,286 @@ function animC(){if(ca)return;ca=true;document.querySelectorAll('.counter').forE
 var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');if(e.target.closest('.stats'))animC();obs.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
 document.querySelectorAll('.fade-up').forEach(function(el){obs.observe(el)});
 
+/* --- 3. الإعدادات والترجمة --- */
 function toggleSettings(){document.getElementById('settingsPanel').classList.toggle('open');document.getElementById('settingsOverlay').classList.toggle('show')}
-function setTheme(t,el){document.getElementById('htmlRoot').setAttribute('data-theme',t==='light'?'':t);document.querySelectorAll('.theme-option').forEach(function(o){o.classList.remove('active')});if(el)el.classList.add('active');localStorage.setItem('theme',t)}
-function setFontSize(s,el){var sz={small:'14px',medium:'16px',large:'18px'};document.body.style.fontSize=sz[s];document.querySelectorAll('#fs-small,#fs-medium,#fs-large').forEach(function(o){o.classList.remove('active')});if(el)el.classList.add('active');localStorage.setItem('fontSize',s)}
+function setTheme(t,el){document.getElementById('htmlRoot').setAttribute('data-theme',t==='light'?'':t);document.querySelectorAll('.theme-card').forEach(function(o){o.classList.remove('active')});if(el)el.classList.add('active');localStorage.setItem('theme',t)}
+function setFontSize(s, el) {
+  var sizes = { small: '14px', medium: '16px', large: '19px' };
+  // نطبّق على html عشان كل الصفحة تتأثر (rem + em يتحسبوا منها)
+  document.documentElement.style.fontSize = sizes[s];
+  document.body.style.fontSize = sizes[s];
+  document.querySelectorAll('#fs-small,#fs-medium,#fs-large').forEach(function(o){ o.classList.remove('active'); });
+  if (el) el.classList.add('active');
+  localStorage.setItem('fontSize', s);
+}
 
-function updateDate(){var d=new Date(),da=['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'],ma=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];var el=document.getElementById('todayDate');if(el)el.textContent=da[d.getDay()]+' '+d.getDate()+' '+ma[d.getMonth()]+' '+d.getFullYear()}
-function updateLiveTime(){var d=new Date(),h=d.getHours(),m=d.getMinutes().toString().padStart(2,'0'),s=d.getSeconds().toString().padStart(2,'0'),ap=h>=12?'م':'ص';h=h%12||12;var el=document.getElementById('liveTime');if(el)el.textContent=h+':'+m+':'+s+' '+ap}
-updateDate();updateLiveTime();setInterval(updateLiveTime,1000);
+/* ====== نظام الترجمة الكامل ====== */
+var translations = {
+  ar: {
+    /* عام */
+    'site-title':'مدرسة شهيد أحمد شلبي أبو الخير - حاسبة الدرجات',
+    'nav-home':'الرئيسية','nav-about':'عن المدرسة','nav-admin':'الإدارة',
+    'nav-teachers':'المعلمون','nav-gallery':'التكريمات','nav-stages':'المراحل',
+    'nav-activities':'الأنشطة','nav-guestbook':'سجل الزوار',
+    /* Top bar */
+    'topbar-location':'مركز طنطا - الغربية','topbar-online':'متصل الآن',
+    /* News ticker */
+    'ticker-label':'أخبار',
+    'ticker-text':'مواعيد التقديم 2025/2026 متاحة الآن | تهنئة للطلاب المتفوقين | النتائج متاحة لدى الإدارة | المدرسة حاصلة على شهادة الجودة | أسبوع الأنشطة المدرسية قريبا',
+    /* Quick links */
+    'ql-about':'عن المدرسة','ql-teachers':'المعلمون','ql-gallery':'التكريمات',
+    'ql-stages':'المراحل','ql-guestbook':'سجل الزوار','ql-facebook':'فيسبوك',
+    /* Hero */
+    'hero-badge':'مدرسة حكومية معتمدة من هيئة الجودة',
+    'hero-title':'مدرسة شهيد أحمد شلبي أبو الخير للتعليم الأساسي',
+    'hero-sub':'إدارة غرب طنطا - مركز طنطا - محافظة الغربية',
+    'hero-btn1':'تعرف على المدرسة','hero-btn2':'صور التكريم','hero-btn3':'سجل الزوار',
+    'hero-c1':'طالب وطالبة','hero-c2':'معلم ومعلمة','hero-c3':'فصل دراسي','hero-c4':'ضمان الجودة',
+    'hero-scroll':'مرر للأسفل',
+    /* About */
+    'about-sub':'عن المدرسة',
+    'about-title':'مدرسة شهيد أحمد شلبي أبو الخير للتعليم الأساسي',
+    'about-desc':'تعد مدرسة شهيد أحمد شلبي أبو الخير للتعليم الأساسي واحدة من المدارس الحكومية المتميزة التابعة لإدارة غرب طنطا التعليمية بمركز طنطا، محافظة الغربية.',
+    'info-name-label':'اسم المدرسة','info-name-val':'شهيد أحمد شلبي أبو الخير',
+    'info-type-label':'النوع','info-type-val':'تعليم أساسي (ابتدائي + إعدادي)',
+    'info-admin-label':'الإدارة','info-admin-val':'إدارة غرب طنطا',
+    'info-loc-label':'الموقع','info-loc-val':'مركز طنطا - الغربية',
+    'info-gov-label':'المحافظة','info-gov-val':'الغربية',
+    'info-acc-label':'الاعتماد','info-acc-val':'حاصلة على شهادة الجودة',
+    /* Stats */
+    'stat1':'طالب وطالبة','stat2':'معلم ومعلمة','stat3':'فصل دراسي','stat4':'نسبة النجاح %',
+    /* Admin */
+    'admin-sub':'الإدارة المدرسية','admin-title':'إدارة المدرسة',
+    'admin1-name':'أ / محمد الجزار','admin1-pos':'مدير المدرسة','admin1-desc':'الإشراف العام على العملية التعليمية والإدارية',
+    'admin2-name':'أ / كريمة الجزار','admin2-pos':'الإدارة','admin2-desc':'الشؤون الإدارية والتنظيمية بالمدرسة',
+    /* Teachers */
+    'teachers-sub':'الهيئة التدريسية','teachers-title':'معلمو ومعلمات المدرسة',
+    'teachers-desc':'نخبة من المعلمين والمعلمات المتميزين',
+    'teachers-search-ph':'ابحث عن معلم...','teachers-total':'إجمالي المعلمين',
+    /* Gallery */
+    'gallery-sub':'التكريمات','gallery-title':'معرض صور التكريم',
+    'video-label':'فيديو حصري','video-title':'فيديو حفل التكريم',
+    /* Stages */
+    'stages-sub':'المراحل التعليمية','stages-title':'مراحل التعليم الأساسي',
+    /* Features */
+    'features-sub':'إمكانيات المدرسة','features-title':'ما يميز مدرستنا',
+    /* Activities */
+    'activities-sub':'الأنشطة المدرسية','activities-title':'أنشطة متنوعة ومميزة',
+    /* Guestbook */
+    'guestbook-sub':'سجل الزوار التفاعلي','guestbook-title':'شاركنا رأيك',
+    'guestbook-desc':'اترك رسالتك وانطباعك عن المدرسة',
+    'gb-form-title':'اكتب رسالتك',
+    'gb-label-name':'الاسم','gb-name-ph':'اكتب اسمك هنا',
+    'gb-label-msg':'رسالتك','gb-msg-ph':'شاركنا رأيك عن المدرسة...',
+    'gb-label-rating':'التقييم','gb-label-emoji':'اختر تفاعل',
+    'gb-submit':'إرسال الرسالة',
+    'gb-msgs-title':'رسائل الزوار','gb-msgs-count-label':'رسالة',
+    /* Footer */
+    'footer-about-title':'عن المدرسة',
+    'footer-about-desc':'مدرسة حكومية للتعليم الأساسي تابعة لوزارة التربية والتعليم المصرية',
+    'footer-links-title':'روابط سريعة',
+    'footer-contact-title':'تواصل معنا',
+    'footer-copy':'مدرسة شهيد أحمد شلبي أبو الخير',
+    'footer-ministry':'وزارة التربية والتعليم المصرية',
+    /* Chatbot */
+    'cb-title':'المساعد الذكي','cb-status':'متصل الآن',
+    'cb-ph':'اكتب سؤالك هنا...',
+    /* Settings */
+    'settings-title':'الإعدادات','settings-sub':'تخصيص المظهر والتفضيلات',
+    'settings-theme':'المظهر','settings-fontsize':'حجم الخط','settings-lang':'اللغة / Language',
+    'theme-light':'فاتح','theme-light-sub':'كلاسيكي مريح',
+    'theme-dark':'داكن أنيق','theme-dark-sub':'أنيق وهادئ',
+    'fs-small':'صغير','fs-medium':'متوسط','fs-large':'كبير',
+    'settings-dev-by':'تم التطوير بواسطة',
+  },
+  en: {
+    /* General */
+    'site-title':'Shahid Ahmed Shalaby School - Grade Calculator',
+    'nav-home':'Home','nav-about':'About','nav-admin':'Administration',
+    'nav-teachers':'Teachers','nav-gallery':'Awards','nav-stages':'Stages',
+    'nav-activities':'Activities','nav-guestbook':'Guestbook',
+    /* Top bar */
+    'topbar-location':'Tanta Center - Gharbia','topbar-online':'Online Now',
+    /* News ticker */
+    'ticker-label':'News',
+    'ticker-text':'Enrollment for 2025/2026 is now open | Congratulations to top students | Results available at the administration | School holds quality certification | Activities week coming soon',
+    /* Quick links */
+    'ql-about':'About School','ql-teachers':'Teachers','ql-gallery':'Awards',
+    'ql-stages':'Stages','ql-guestbook':'Guestbook','ql-facebook':'Facebook',
+    /* Hero */
+    'hero-badge':'Government School - Quality Certified',
+    'hero-title':'Shahid Ahmed Shalaby Abu Al-Kheir School',
+    'hero-sub':'West Tanta Administration - Tanta - Gharbia Governorate',
+    'hero-btn1':'About the School','hero-btn2':'Award Photos','hero-btn3':'Guestbook',
+    'hero-c1':'Students','hero-c2':'Teachers','hero-c3':'Classrooms','hero-c4':'Quality Certified',
+    'hero-scroll':'Scroll Down',
+    /* About */
+    'about-sub':'About the School',
+    'about-title':'Shahid Ahmed Shalaby Abu Al-Kheir Basic Education School',
+    'about-desc':'Shahid Ahmed Shalaby Abu Al-Kheir School is one of the distinguished government schools under the West Tanta Educational Administration in Tanta, Gharbia Governorate.',
+    'info-name-label':'School Name','info-name-val':'Shahid Ahmed Shalaby Abu Al-Kheir',
+    'info-type-label':'Type','info-type-val':'Basic Education (Primary + Preparatory)',
+    'info-admin-label':'Administration','info-admin-val':'West Tanta Administration',
+    'info-loc-label':'Location','info-loc-val':'Tanta Center - Gharbia',
+    'info-gov-label':'Governorate','info-gov-val':'Gharbia',
+    'info-acc-label':'Accreditation','info-acc-val':'Quality Certificate Holder',
+    /* Stats */
+    'stat1':'Students','stat2':'Teachers','stat3':'Classrooms','stat4':'Success Rate %',
+    /* Admin */
+    'admin-sub':'School Administration','admin-title':'School Management',
+    'admin1-name':'Mr. Mohamed Al-Gazzar','admin1-pos':'School Principal','admin1-desc':'General supervision of educational and administrative operations',
+    'admin2-name':'Ms. Karima Al-Gazzar','admin2-pos':'Administration','admin2-desc':'Administrative and organizational affairs of the school',
+    /* Teachers */
+    'teachers-sub':'Teaching Staff','teachers-title':'School Teachers',
+    'teachers-desc':'An elite group of distinguished teachers',
+    'teachers-search-ph':'Search for a teacher...','teachers-total':'Total Teachers',
+    /* Gallery */
+    'gallery-sub':'Achievements','gallery-title':'Award Photo Gallery',
+    'video-label':'Exclusive Video','video-title':'Award Ceremony Video',
+    /* Stages */
+    'stages-sub':'Educational Stages','stages-title':'Basic Education Stages',
+    /* Features */
+    'features-sub':'School Facilities','features-title':'What Makes Our School Special',
+    /* Activities */
+    'activities-sub':'School Activities','activities-title':'Diverse & Distinguished Activities',
+    /* Guestbook */
+    'guestbook-sub':'Interactive Guestbook','guestbook-title':'Share Your Thoughts',
+    'guestbook-desc':'Leave your message and impression about the school',
+    'gb-form-title':'Write Your Message',
+    'gb-label-name':'Name','gb-name-ph':'Your name here',
+    'gb-label-msg':'Message','gb-msg-ph':'Share your thoughts about the school...',
+    'gb-label-rating':'Rating','gb-label-emoji':'Choose Reaction',
+    'gb-submit':'Send Message',
+    'gb-msgs-title':'Visitor Messages','gb-msgs-count-label':'messages',
+    /* Footer */
+    'footer-about-title':'About the School',
+    'footer-about-desc':'A government school for basic education under the Egyptian Ministry of Education',
+    'footer-links-title':'Quick Links',
+    'footer-contact-title':'Contact Us',
+    'footer-copy':'Shahid Ahmed Shalaby Abu Al-Kheir School',
+    'footer-ministry':'Egyptian Ministry of Education',
+    /* Chatbot */
+    'cb-title':'Smart Assistant','cb-status':'Online Now',
+    'cb-ph':'Type your question here...',
+    /* Settings */
+    'settings-title':'Settings','settings-sub':'Customize appearance & preferences',
+    'settings-theme':'Theme','settings-fontsize':'Font Size','settings-lang':'Language / اللغة',
+    'theme-light':'Light','theme-light-sub':'Classic & comfortable',
+    'theme-dark':'Dark Elegant','theme-dark-sub':'Stylish & calm',
+    'fs-small':'Small','fs-medium':'Medium','fs-large':'Large',
+    'settings-dev-by':'Developed by',
+  }
+};
 
-(function(){var texts=['صرح تعليمي حكومي عريق يخدم أبناء مركز طنطا بمحافظة الغربية','نسعى لتقديم تعليم أساسي متميز يبني جيلا واعيا ومبدعا','حاصلون على شهادة ضمان الجودة والاعتماد من الهيئة القومية'];var te=document.getElementById('typingText');if(!te)return;var ti=0,chi=0,isDel=false;function type(){var cur=texts[ti];if(!isDel){te.textContent=cur.substring(0,chi+1);chi++;if(chi===cur.length){isDel=true;setTimeout(type,2500);return}setTimeout(type,40)}else{te.textContent=cur.substring(0,chi-1);chi--;if(chi===0){isDel=false;ti=(ti+1)%texts.length;setTimeout(type,400);return}setTimeout(type,20)}}setTimeout(type,1500)})();
+function setLang(lang, el) {
+  document.querySelectorAll('.lang-btn').forEach(function(b){ b.classList.remove('active'); });
+  if (el) el.classList.add('active');
+
+  var root = document.getElementById('htmlRoot');
+  if (lang === 'en') {
+    root.setAttribute('lang', 'en');
+    root.setAttribute('dir', 'ltr');
+    // خط مناسب للإنجليزي
+    document.body.style.fontFamily = "'Segoe UI', 'Arial', sans-serif";
+  } else {
+    root.setAttribute('lang', 'ar');
+    root.setAttribute('dir', 'rtl');
+    document.body.style.fontFamily = "'Tajawal', sans-serif";
+  }
+
+  var t = translations[lang] || translations.ar;
+
+  // ترجمة النصوص
+  document.querySelectorAll('[data-i18n]').forEach(function(node) {
+    var key = node.getAttribute('data-i18n');
+    if (t[key] !== undefined) node.textContent = t[key];
+  });
+
+  // ترجمة placeholders
+  document.querySelectorAll('[data-i18n-ph]').forEach(function(node) {
+    var key = node.getAttribute('data-i18n-ph');
+    if (t[key] !== undefined) node.placeholder = t[key];
+  });
+
+  // ترجمة عنوان الصفحة
+  if (t['site-title']) document.title = t['site-title'];
+
+  // ترجمة الـ typing text في الهيرو
+  if (lang === 'en') {
+    window._typingTexts = [
+      'A distinguished government school serving Tanta families',
+      'We aim to build a creative and aware generation',
+      'Quality certified by the National Quality Assurance Authority'
+    ];
+  } else {
+    window._typingTexts = [
+      'صرح تعليمي حكومي عريق يخدم أبناء مركز طنطا',
+      'نسعى لتقديم تعليم أساسي متميز يبني جيلا واعيا ومبدعا',
+      'حاصلون على شهادة ضمان الجودة والاعتماد من الهيئة القومية'
+    ];
+  }
+
+  // تحديث التاريخ باللغة الجديدة
+  updateDate(lang);
+
+  localStorage.setItem('lang', lang);
+}
+
+function updateDate(lang) {
+  var d = new Date();
+  var el = document.getElementById('todayDate');
+  if (!el) return;
+  var currentLang = lang || localStorage.getItem('lang') || 'ar';
+  if (currentLang === 'en') {
+    var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    el.textContent = days[d.getDay()] + ', ' + d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
+  } else {
+    var days = ['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
+    var months = ['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+    el.textContent = days[d.getDay()] + ' ' + d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
+  }
+}
+
+function updateLiveTime() {
+  var d = new Date(), h = d.getHours(), m = d.getMinutes().toString().padStart(2,'0'), s = d.getSeconds().toString().padStart(2,'0');
+  var currentLang = localStorage.getItem('lang') || 'ar';
+  var timeStr;
+  if (currentLang === 'en') {
+    var ap = h >= 12 ? 'PM' : 'AM'; h = h % 12 || 12;
+    timeStr = h + ':' + m + ':' + s + ' ' + ap;
+  } else {
+    var ap = h >= 12 ? 'م' : 'ص'; h = h % 12 || 12;
+    timeStr = h + ':' + m + ':' + s + ' ' + ap;
+  }
+  var el = document.getElementById('liveTime'); if (el) el.textContent = timeStr;
+}
+updateDate(); updateLiveTime(); setInterval(updateLiveTime, 1000);
+
+(function(){
+  window._typingTexts = [
+    'صرح تعليمي حكومي عريق يخدم أبناء مركز طنطا بمحافظة الغربية',
+    'نسعى لتقديم تعليم أساسي متميز يبني جيلا واعيا ومبدعا',
+    'حاصلون على شهادة ضمان الجودة والاعتماد من الهيئة القومية'
+  ];
+  var te = document.getElementById('typingText');
+  if (!te) return;
+  var ti = 0, chi = 0, isDel = false;
+  function type() {
+    var texts = window._typingTexts;
+    var cur = texts[ti % texts.length];
+    if (!isDel) {
+      te.textContent = cur.substring(0, chi + 1); chi++;
+      if (chi === cur.length) { isDel = true; setTimeout(type, 2500); return; }
+      setTimeout(type, 40);
+    } else {
+      te.textContent = cur.substring(0, chi - 1); chi--;
+      if (chi === 0) { isDel = false; ti = (ti + 1) % texts.length; setTimeout(type, 400); return; }
+      setTimeout(type, 20);
+    }
+  }
+  setTimeout(type, 1500);
+})();
 
 function initVisitorCounter(){var c=parseInt(localStorage.getItem('vc')||'1247'),lv=localStorage.getItem('lvd'),td=new Date().toDateString();if(lv!==td){c++;localStorage.setItem('vc',c.toString());localStorage.setItem('lvd',td)}var el=document.getElementById('visitorCount');if(el){var st=performance.now();(function u(now){var p=Math.min((now-st)/1500,1);el.textContent=Math.floor(c*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(u);else el.textContent=c})(performance.now())}var ob=Math.floor(Math.random()*5)+2;var o1=document.getElementById('onlineCount'),o2=document.getElementById('onlineCount2');if(o1)o1.textContent=ob;if(o2)o2.textContent=ob}
 
@@ -1528,15 +2210,82 @@ document.querySelectorAll('#starRating i').forEach(function(star){star.addEventL
 document.querySelectorAll('.emoji-btn').forEach(function(btn){btn.addEventListener('click',function(){document.querySelectorAll('.emoji-btn').forEach(function(b){b.classList.remove('active')});this.classList.add('active');gbEmoji=this.dataset.emoji})});
 var gbMsg=document.getElementById('gbMessage');if(gbMsg)gbMsg.addEventListener('input',function(){document.getElementById('charCount').textContent=this.value.length});
 
+/* --- 4. سجل الزوار --- */
 var defaultMessages=[{name:'أحمد محمود',message:'مدرسة ممتازة والمدرسين محترمين جدا',rating:5,emoji:'star',created_at:Date.now()-86400000*2},{name:'سارة عبدالله',message:'بنتي بتحب المدرسة جدا والأنشطة جميلة',rating:5,emoji:'heart',created_at:Date.now()-86400000*5},{name:'محمد حسن',message:'مستوى التعليم عالي والإدارة متعاونة',rating:4,emoji:'thumbsup',created_at:Date.now()-86400000*8}];
-var allMessages=JSON.parse(localStorage.getItem('gb_msgs')||'[]');
+var allMessages=[];
+var GB_BIN_KEY='gb_bin_id_v3';
+var GB_BIN_ID=localStorage.getItem(GB_BIN_KEY)||'';
 
-function loadGuestbookMessages(){var list=document.getElementById('messagesList'),msgs=allMessages.length>0?allMessages:defaultMessages;list.innerHTML='';document.getElementById('messageCount').textContent=msgs.length;msgs.forEach(function(msg){list.appendChild(createMessageCard(msg))})}
-function createMessageCard(msg){var card=document.createElement('div');card.className='message-card';var name=msg.name||'زائر',initial=name.charAt(0),date=msg.created_at?formatDate(new Date(msg.created_at)):'';var stars='';for(var i=0;i<5;i++)stars+='<i class="fas fa-star" style="color:'+(i<(msg.rating||5)?'var(--gold)':'#ddd')+'"></i>';var emojiMap={heart:'<i class="fas fa-heart" style="color:#e74c3c;font-size:1.5rem"></i>',star:'<i class="fas fa-star" style="color:#f39c12;font-size:1.5rem"></i>',thumbsup:'<i class="fas fa-thumbs-up" style="color:#3498db;font-size:1.5rem"></i>',flag:'<i class="fas fa-flag" style="color:#e74c3c;font-size:1.5rem"></i>',book:'<i class="fas fa-book" style="color:#3498db;font-size:1.5rem"></i>'};card.innerHTML='<div class="msg-header"><div class="msg-info"><div class="msg-avatar">'+escapeHtml(initial)+'</div><div><div class="msg-name">'+escapeHtml(name)+'</div><div class="msg-date">'+date+'</div></div></div><div class="msg-emoji">'+(emojiMap[msg.emoji]||emojiMap.heart)+'</div></div><div class="msg-body">'+escapeHtml(msg.message||'')+'</div><div class="msg-stars">'+stars+'</div>';return card}
+async function loadGuestbookMessages(){
+  var list=document.getElementById('messagesList');
+  if(!list)return;
+  list.innerHTML='<div style="text-align:center;padding:24px;color:var(--gray)"><i class="fas fa-spinner fa-spin" style="font-size:1.2rem"></i></div>';
+  try{
+    if(!GB_BIN_ID){
+      var r=await fetch('https://api.jsonbin.io/v3/b',{method:'POST',headers:{'Content-Type':'application/json','X-Bin-Name':'school-msgs','X-Bin-Private':'false'},body:JSON.stringify({messages:[]})});
+      var d=await r.json();
+      GB_BIN_ID=d.metadata.id;
+      localStorage.setItem(GB_BIN_KEY,GB_BIN_ID);
+    }
+    var res=await fetch('https://api.jsonbin.io/v3/b/'+GB_BIN_ID+'/latest');
+    var data=await res.json();
+    allMessages=data.record.messages||[];
+  }catch(e){
+    allMessages=JSON.parse(localStorage.getItem('gb_msgs_local')||'[]');
+  }
+  renderMessages();
+}
+
+function renderMessages(){
+  var list=document.getElementById('messagesList');
+  if(!list)return;
+  var msgs=allMessages.length>0?allMessages:defaultMessages;
+  var mc=document.getElementById('messageCount');
+  if(mc)mc.textContent=msgs.length;
+  list.innerHTML='';
+  msgs.forEach(function(msg){list.appendChild(createMessageCard(msg))});
+}
+
+function createMessageCard(msg){
+  var card=document.createElement('div');card.className='message-card';
+  var name=msg.name||'زائر',initial=name.charAt(0),date=msg.created_at?formatDate(new Date(msg.created_at)):'';
+  var stars='';for(var i=0;i<5;i++)stars+='<i class="fas fa-star" style="color:'+(i<(msg.rating||5)?'var(--gold)':'#ddd')+'"></i>';
+  var emojiMap={heart:'<i class="fas fa-heart" style="color:#e05c6a;font-size:1.4rem"></i>',star:'<i class="fas fa-star" style="color:var(--gold);font-size:1.4rem"></i>',thumbsup:'<i class="fas fa-thumbs-up" style="color:var(--primary);font-size:1.4rem"></i>',flag:'<i class="fas fa-flag" style="color:#e05c6a;font-size:1.4rem"></i>',book:'<i class="fas fa-book" style="color:var(--primary);font-size:1.4rem"></i>'};
+  card.innerHTML='<div class="msg-header"><div class="msg-info"><div class="msg-avatar">'+escapeHtml(initial)+'</div><div><div class="msg-name">'+escapeHtml(name)+'</div><div class="msg-date">'+date+'</div></div></div><div class="msg-emoji">'+(emojiMap[msg.emoji]||emojiMap.heart)+'</div></div><div class="msg-body">'+escapeHtml(msg.message||'')+'</div><div class="msg-stars">'+stars+'</div>';
+  return card;
+}
 function formatDate(d){var months=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];return d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear()}
 function escapeHtml(str){var div=document.createElement('div');div.textContent=str;return div.innerHTML}
 
-function submitGuestbook(e){e.preventDefault();var name=document.getElementById('gbName').value.trim(),message=document.getElementById('gbMessage').value.trim(),btn=document.getElementById('submitBtn');if(!name||!message)return;btn.disabled=true;btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> جاري الإرسال...';allMessages.unshift({name:name,message:message,rating:gbRating,emoji:gbEmoji,created_at:Date.now()});localStorage.setItem('gb_msgs',JSON.stringify(allMessages));setTimeout(function(){launchConfetti();showToast('تم إرسال رسالتك بنجاح!');document.getElementById('guestbookForm').reset();document.getElementById('charCount').textContent='0';gbRating=5;gbEmoji='heart';document.querySelectorAll('#starRating i').forEach(function(s){s.classList.add('active')});document.querySelectorAll('.emoji-btn').forEach(function(b){b.classList.remove('active')});document.querySelector('.emoji-btn[data-emoji="heart"]').classList.add('active');loadGuestbookMessages();btn.disabled=false;btn.innerHTML='<i class="fas fa-paper-plane"></i> إرسال الرسالة'},800)}
+async function submitGuestbook(e){
+  e.preventDefault();
+  var name=document.getElementById('gbName').value.trim();
+  var message=document.getElementById('gbMessage').value.trim();
+  var btn=document.getElementById('submitBtn');
+  if(!name||!message)return;
+  btn.disabled=true;
+  btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> جاري الإرسال...';
+  var newMsg={name:name,message:message,rating:gbRating,emoji:gbEmoji,created_at:Date.now()};
+  allMessages.unshift(newMsg);
+  localStorage.setItem('gb_msgs_local',JSON.stringify(allMessages));
+  try{
+    if(GB_BIN_ID){
+      await fetch('https://api.jsonbin.io/v3/b/'+GB_BIN_ID,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:allMessages})});
+    }
+  }catch(err){}
+  launchConfetti();
+  showToast('تم إرسال رسالتك! ستظهر للجميع ✓');
+  document.getElementById('guestbookForm').reset();
+  document.getElementById('charCount').textContent='0';
+  gbRating=5;gbEmoji='heart';
+  document.querySelectorAll('#starRating i').forEach(function(s){s.classList.add('active')});
+  document.querySelectorAll('.emoji-btn').forEach(function(b){b.classList.remove('active')});
+  var hb=document.querySelector('.emoji-btn[data-emoji="heart"]');
+  if(hb)hb.classList.add('active');
+  renderMessages();
+  btn.disabled=false;
+  btn.innerHTML='<i class="fas fa-paper-plane"></i> إرسال الرسالة';
+}
 
 function launchConfetti(){var canvas=document.getElementById('confettiCanvas');if(!canvas)return;var ctx=canvas.getContext('2d');canvas.width=window.innerWidth;canvas.height=window.innerHeight;var particles=[],colors=['#f39c12','#e74c3c','#2ecc71','#3498db','#9b59b6'];for(var i=0;i<100;i++)particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height-canvas.height,r:Math.random()*6+2,color:colors[Math.floor(Math.random()*colors.length)],speed:Math.random()*3+2,angle:Math.random()*Math.PI*2,spin:Math.random()*.2-.1,opacity:1});var frame=0;(function animate(){ctx.clearRect(0,0,canvas.width,canvas.height);frame++;particles.forEach(function(p){p.y+=p.speed;p.x+=Math.sin(p.angle)*2;p.angle+=p.spin;p.opacity=Math.max(0,1-frame/120);ctx.globalAlpha=p.opacity;ctx.fillStyle=p.color;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill()});ctx.globalAlpha=1;if(frame<120)requestAnimationFrame(animate);else ctx.clearRect(0,0,canvas.width,canvas.height)})()}
 function showToast(msg){var toast=document.getElementById('toast');document.getElementById('toastMsg').textContent=msg;toast.classList.add('show');setTimeout(function(){toast.classList.remove('show')},3500)}
@@ -1564,6 +2313,7 @@ topics:[
 {keywords:['المطور','مين عمل','الجوهري','نوار'],response:'<i class="fas fa-code" style="color:var(--gold)"></i> <b>تم تصميم وتطوير الموقع بواسطة:</b><br><br><i class="fas fa-star" style="color:var(--gold)"></i> <b>محمد الجوهري نوار</b> <i class="fas fa-star" style="color:var(--gold)"></i>'}
 ]};
 
+/* --- 5. المساعد الذكي --- */
 function toggleChatbot(){chatOpen=!chatOpen;document.getElementById('chatbotPanel').classList.toggle('open',chatOpen);document.getElementById('chatbotToggle').classList.toggle('active',chatOpen);document.getElementById('chatBadge').style.display='none';if(chatOpen&&document.getElementById('cbBody').children.length===0)addBotMsg(schoolKB.greetings[0])}
 function addBotMsg(html){var body=document.getElementById('cbBody'),div=document.createElement('div');div.className='cb-msg cb-bot';div.innerHTML='<div class="cb-msg-avatar"><i class="fas fa-robot"></i></div><div class="cb-msg-bubble">'+html+'<div class="cb-msg-time">'+new Date().toLocaleTimeString('ar-EG',{hour:'2-digit',minute:'2-digit'})+'</div></div>';body.appendChild(div);body.scrollTop=body.scrollHeight}
 function addUserMsg(text){var body=document.getElementById('cbBody'),div=document.createElement('div');div.className='cb-msg cb-user';div.innerHTML='<div class="cb-msg-bubble">'+escapeHtml(text)+'<div class="cb-msg-time">'+new Date().toLocaleTimeString('ar-EG',{hour:'2-digit',minute:'2-digit'})+'</div></div>';body.appendChild(div);body.scrollTop=body.scrollHeight}
@@ -1589,7 +2339,65 @@ addBotMsg(bestMatch.response);return}
 addBotMsg('<i class="fas fa-question-circle" style="color:var(--gold)"></i> مش متأكد إني فهمت سؤالك. جرب تسأل عن:<br><br><i class="fas fa-school" style="color:var(--gold)"></i> المدرسة<br><i class="fas fa-calculator" style="color:var(--gold)"></i> حاسبة الدرجات<br><i class="fas fa-lightbulb" style="color:var(--gold)"></i> نصائح للمذاكرة<br><i class="fas fa-question-circle" style="color:var(--gold)"></i> اختبار تفاعلي<br><br>أو اختر من الأزرار بالأسفل!')}
 function clearChat(){document.getElementById('cbBody').innerHTML='';addBotMsg(schoolKB.greetings[0])}
 
-function openExamCountdown(){var examDates={'إعدادي':new Date('2026-05-10'),'شهادة إعدادية':new Date('2026-06-07')},now=new Date(),html='<i class="fas fa-hourglass-half" style="color:var(--gold)"></i> <b>العد التنازلي للامتحانات 2025/2026</b><br><br>';for(var stage in examDates){var diff=examDates[stage]-now,days=Math.floor(diff/(1000*60*60*24)),color=days<30?'#e74c3c':days<60?'#f39c12':'#27ae60';html+='<i class="fas fa-circle" style="color:'+color+';font-size:.5rem"></i> <b>'+stage+':</b> باقي <b>'+days+'</b> يوم<br>'}html+='<br><i class="fas fa-fist-raised" style="color:var(--gold)"></i> ذاكر كويس وربنا يوفقك!';addBotMsg(html)}
+function openExamCountdown() {
+  var now = new Date();
+  var currentYear = now.getFullYear();
+  var lang = localStorage.getItem('lang') || 'ar';
+
+  // الأعياد والمناسبات المصرية الثابتة
+  var holidays = [
+    { name: lang==='en' ? 'Coptic Christmas (7 Jan)'         : 'عيد الميلاد القبطي (7 يناير)',       date: new Date(currentYear, 0, 7),  icon: '🎄', color: '#e74c3c' },
+    { name: lang==='en' ? 'Revolution Day & Police Day (25 Jan)' : 'ثورة 25 يناير وعيد الشرطة',     date: new Date(currentYear, 0, 25), icon: '🇪🇬', color: '#c0392b' },
+    { name: lang==='en' ? 'Eid Al-Fitr (est. 20-22 Mar)'    : 'عيد الفطر المبارك (متوقع 20-22 مارس)', date: new Date(currentYear, 2, 20), icon: '🌙', color: '#f39c12' },
+    { name: lang==='en' ? 'Sham El-Nessim (13 Apr)'          : 'شم النسيم (13 أبريل)',               date: new Date(currentYear, 3, 13), icon: '🌸', color: '#27ae60' },
+    { name: lang==='en' ? 'Sinai Liberation Day (25 Apr)'    : 'عيد تحرير سيناء (25 أبريل)',         date: new Date(currentYear, 3, 25), icon: '✌️', color: '#2980b9' },
+    { name: lang==='en' ? 'Labour Day (1 May)'               : 'عيد العمال (1 مايو)',                date: new Date(currentYear, 4, 1),  icon: '⚒️', color: '#8e44ad' },
+    { name: lang==='en' ? 'Eid Al-Adha (est. 27-29 May)'    : 'عيد الأضحى المبارك (متوقع 27-29 مايو)', date: new Date(currentYear, 4, 27), icon: '🐑', color: '#e67e22' },
+    { name: lang==='en' ? 'June 30 Revolution (30 Jun)'      : 'ثورة 30 يونيو',                      date: new Date(currentYear, 5, 30), icon: '🔥', color: '#c0392b' },
+    { name: lang==='en' ? 'July 23 Revolution (23 Jul)'      : 'ثورة 23 يوليو',                      date: new Date(currentYear, 6, 23), icon: '🏅', color: '#1abc9c' },
+  ];
+
+  // امتحانات المدرسة
+  var exams = [
+    { name: lang==='en' ? 'Preparatory Exams Start'    : 'بداية امتحانات الإعدادي',      date: new Date('2026-05-10'), icon: '📝', color: '#2980b9' },
+    { name: lang==='en' ? 'Certificate Exams (3rd Prep)' : 'امتحانات الشهادة الإعدادية', date: new Date('2026-06-07'), icon: '🎓', color: '#8e44ad' },
+  ];
+
+  function daysLeft(d) {
+    var diff = new Date(d.getFullYear(), d.getMonth(), d.getDate()) - new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    return Math.round(diff / 86400000);
+  }
+
+  // اظهر فقط الأعياد القادمة (اللي لم تمر بعد أو في نفس اليوم)
+  var upcoming = holidays.filter(function(h) { return daysLeft(h.date) >= 0; })
+    .sort(function(a, b) { return daysLeft(a.date) - daysLeft(b.date); })
+    .slice(0, 5);
+
+  var title = lang==='en' ? '🗓️ <b>Upcoming Egyptian Holidays & Exams</b>' : '🗓️ <b>الأعياد والامتحانات القادمة</b>';
+  var html = title + '<br><br>';
+
+  upcoming.forEach(function(h) {
+    var d = daysLeft(h.date);
+    var badge = d === 0
+      ? (lang==='en' ? '<b style="color:#e74c3c">TODAY! 🎉</b>' : '<b style="color:#e74c3c">اليوم! 🎉</b>')
+      : (lang==='en' ? '<b>' + d + '</b> days' : 'باقي <b>' + d + '</b> يوم');
+    html += h.icon + ' <span style="color:' + h.color + '">' + h.name + '</span> — ' + badge + '<br>';
+  });
+
+  html += '<br>';
+  exams.forEach(function(ex) {
+    var d = daysLeft(ex.date);
+    if (d < 0) return;
+    var badge = d === 0
+      ? (lang==='en' ? '<b style="color:#e74c3c">TODAY!</b>' : '<b style="color:#e74c3c">اليوم!</b>')
+      : (lang==='en' ? '<b>' + d + '</b> days' : 'باقي <b>' + d + '</b> يوم');
+    html += ex.icon + ' <span style="color:' + ex.color + '">' + ex.name + '</span> — ' + badge + '<br>';
+  });
+
+  html += '<br><i class="fas fa-fist-raised" style="color:var(--gold)"></i> ';
+  html += lang==='en' ? '<b>Study hard, good luck! 🌟</b>' : '<b>ذاكر كويس وربنا يوفقك! 🌟</b>';
+  addBotMsg(html);
+}
 
 function openStudyTips(){addBotMsg('<i class="fas fa-lightbulb" style="color:var(--gold)"></i> <b>نصائح ذهبية للمذاكرة:</b><br><br><i class="fas fa-clock" style="color:#e74c3c"></i> <b>نظم وقتك:</b> خصص وقت محدد لكل مادة<br><br><i class="fas fa-brain" style="color:#9b59b6"></i> <b>افهم مش تحفظ:</b> الفهم بيخليك تفتكر أكتر<br><br><i class="fas fa-pen" style="color:#2980b9"></i> <b>اكتب ملخصات:</b> الكتابة بتثبت المعلومات<br><br><i class="fas fa-bed" style="color:#27ae60"></i> <b>نام كويس:</b> النوم الكافي مهم جدا للتركيز<br><br><i class="fas fa-apple-alt" style="color:#e67e22"></i> <b>كل أكل صحي:</b> التغذية السليمة بتساعد على التركيز<br><br><i class="fas fa-redo" style="color:#1abc9c"></i> <b>راجع باستمرار:</b> المراجعة الدورية بتمنع النسيان')}
 
@@ -1667,6 +2475,7 @@ html+='<br><b>'+earned+'/'+allBadges.length+'</b> شارات محققة';
 addBotMsg(html);
 }
 
+/* --- 6. حاسبة الدرجات --- */
 function openToolsModal(){
 document.getElementById('toolsOverlay').classList.add('show');
 document.getElementById('toolsModal').classList.add('show');
@@ -1731,38 +2540,15 @@ rs.scrollIntoView({behavior:'smooth',block:'start'});
 addBotMsg('<i class="fas fa-chart-bar" style="color:var(--gold)"></i> <b>نتيجة حساب الدرجات ('+modeLabel+'):</b><br><br>التقدير: <b>'+grade+'</b><br>المجموع: <b>'+grand+'/'+grandMax+'</b><br>النسبة: <b>'+pct.toFixed(1)+'%</b>'+(strong.length>0?'<br><br><i class="fas fa-arrow-up" style="color:#27ae60"></i> <b>أقوى مادة:</b> '+strong[0].name:'')+(weak.length>0?'<br><i class="fas fa-arrow-down" style="color:#e74c3c"></i> <b>تحتاج تحسين:</b> '+weak[0].name:''));
 }
 
+/* --- 8. تهيئة الصفحة عند التحميل --- */
 window.addEventListener('load',function(){
 var l=document.getElementById('loader');if(l){l.classList.add('hidden');setTimeout(function(){l.style.display='none'},500)}
 initVisitorCounter();loadGuestbookMessages();
 earnBadge('visit');
-var st=localStorage.getItem('theme');if(st&&st!=='light'){document.getElementById('htmlRoot').setAttribute('data-theme',st);document.querySelectorAll('.theme-option').forEach(function(o,i){o.classList.remove('active');if(i===1)o.classList.add('active')})}
-var sf=localStorage.getItem('fontSize');if(sf){var sz={small:'14px',medium:'16px',large:'18px'};document.body.style.fontSize=sz[sf];document.querySelectorAll('#fs-small,#fs-medium,#fs-large').forEach(function(o){o.classList.remove('active')});var f=document.getElementById('fs-'+sf);if(f)f.classList.add('active')}
+var st=localStorage.getItem('theme');if(st&&st!=='light'){document.getElementById('htmlRoot').setAttribute('data-theme',st);document.querySelectorAll('.theme-card').forEach(function(o){o.classList.remove('active')});var tc=document.getElementById('theme-dark');if(tc)tc.classList.add('active')}
+var sf=localStorage.getItem('fontSize');if(sf){var sz={small:'14px',medium:'16px',large:'19px'};document.documentElement.style.fontSize=sz[sf];document.body.style.fontSize=sz[sf];document.querySelectorAll('#fs-small,#fs-medium,#fs-large').forEach(function(o){o.classList.remove('active')});var f=document.getElementById('fs-'+sf);if(f)f.classList.add('active')}
+var sl=localStorage.getItem('lang');if(sl==='en'){var lb=document.getElementById('lang-en');setLang('en',lb);}
 });
-window.addEventListener('scroll', () => {
-  const nav = document.querySelector('.navbar, nav');
-  if (nav) {
-    if (window.scrollY > 50) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
-  }
-});
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.animation = 'fadeInUp 0.6s ease-out both';
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.tool-card, .card, section').forEach(el => {
-  el.style.opacity = '0';
-  observer.observe(el);
-});
-
 </script>
 </body>
 </html>
